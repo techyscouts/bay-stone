@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const MenuItem = () => {
   return (
-    <menu className={cn('flex gap-10')}>
+    <menu className={cn('flex gap-6 2xl:gap-10')}>
       {['about bay stone', 'our products', 'gallery', 'contact'].map(
         (item, index) => (
           <li

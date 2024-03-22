@@ -10,6 +10,9 @@ const config = {
   ],
   prefix: '',
   theme: {
+    screens: {
+      '2xl': '1360px',
+    },
     container: {
       center: true,
       padding: '2rem',
