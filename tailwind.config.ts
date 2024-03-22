@@ -22,6 +22,15 @@ const config = {
         urbane: ['Urbane'],
         zillaSlab: ['var(--font-zillaSlab)'],
       },
+      colors: {
+        black: {
+          1: '#121212',
+        },
+        white: {
+          1: '#FFFFFF',
+          2: '#F6FDFF',
+        },
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

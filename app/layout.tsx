@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Zilla_Slab } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
+import { Navbar } from '@/components/shared';
 
 const zillaSlab = Zilla_Slab({
   weight: ['300', '400', '500', '600', '700'],
@@ -29,7 +30,10 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ejc8zjm.css" />
       </head>
-      <body className={`${zillaSlab.variable}`}>{children}</body>
+      <body className={`${zillaSlab.variable}`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
