@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        urbane: ['var(--font-urbane)'],
+        urbane: ['Urbane'],
         zillaSlab: ['var(--font-zillaSlab)'],
       },
       keyframes: {
