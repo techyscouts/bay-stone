@@ -10,9 +10,6 @@ const config = {
   ],
   prefix: '',
   theme: {
-    screens: {
-      '2xl': '1360px',
-    },
     container: {
       center: true,
       padding: '2rem',
@@ -32,6 +29,12 @@ const config = {
         white: {
           1: '#FFFFFF',
           2: '#F6FDFF',
+        },
+        blue: {
+          1: '#1E708A',
+        },
+        gray: {
+          1: '#434343',
         },
       },
       keyframes: {
