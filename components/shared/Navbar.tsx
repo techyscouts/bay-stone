@@ -7,8 +7,9 @@ import { Input } from '../ui/input';
 import { useRef, useState } from 'react';
 import useTapAway from '@/utils/useTapAway';
 import { navItem } from '@/types';
-import { DesktopMenuItem, Hamburger, MobileMenuItem } from './small';
+import { Hamburger } from './small';
 import { cn } from '@/lib/utils';
+import { DesktopMenuItem, MobileMenuItem } from '.';
 
 interface NavbarProps {
   logo: string;
@@ -49,7 +50,13 @@ const Navbar = ({
               href="/"
               className="relative h-7 w-[197px] md:h-9 xl:h-11 xl:w-[234px]"
             >
-              <Image src={logo} alt="Baystone Logo" fill priority />
+              <Image
+                src={logo}
+                alt="Baystone Logo"
+                fill
+                priority
+                className="object-contain"
+              />
             </Link>
             <DesktopMenuItem navItems={navItems} />
           </div>
@@ -111,7 +118,10 @@ const Navbar = ({
           { 'translate-x-0': isMobileMenuOpen }
         )}
       >
-        <MobileMenuItem navItems={navItems} />
+        <MobileMenuItem
+          navItems={navItems}
+          menuClose={() => setIsMobileMenuOpen(false)}
+        />
         <div className="w-full py-5 pl-6 md:pl-[50px]">
           <Button className="blue-main w-full max-w-[297px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1">
             <Image
