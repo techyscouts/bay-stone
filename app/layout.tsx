@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 import { Zilla_Slab } from 'next/font/google';
 
 import './globals.css';
-import { Navbar } from '@/components/shared';
+import { Footer, Navbar } from '@/components/shared';
 import StoryblokPrivider from '@/providers/StoryblokProvider';
 import { fetchHeaderFooter } from '@/queries/storyblokQueries';
 
@@ -57,6 +57,7 @@ export default async function RootLayout({
             mobileButtonNumber={content.mobileButtonNumber}
           />
           {children}
+          <Footer />
         </body>
       </StoryblokPrivider>
     </html>
