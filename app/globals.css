@@ -29,10 +29,25 @@
   .wrapper {
     @apply w-[92%]  2xl:w-[90%] max-w-[1376px] mx-auto;
   }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
   .text-14 {
     @apply text-[14px] leading-[24px];
   }
   .text-16 {
     @apply text-[16px] leading-[26px];
+  }
+  .text-20 {
+    @apply text-[20px] leading-[28px];
+  }
+  .text-24 {
+    @apply text-[24px] leading-[32px];
+  }
+  .text-32 {
+    @apply text-[32px] leading-[40px];
+  }
+  .text-48 {
+    @apply text-[48px] leading-[56px];
   }
 }

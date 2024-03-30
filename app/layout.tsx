@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 import { Zilla_Slab } from 'next/font/google';
 
 import './globals.css';
-import { Navbar } from '@/components/shared';
+import { Footer, Navbar } from '@/components/shared';
 import StoryblokPrivider from '@/providers/StoryblokProvider';
 import { fetchHeaderFooter } from '@/queries/storyblokQueries';
 
@@ -42,6 +42,7 @@ export default async function RootLayout({
       story: { content },
     },
   } = await fetchHeaderFooter();
+
   return (
     <html lang="en">
       <head>
@@ -57,6 +58,18 @@ export default async function RootLayout({
             mobileButtonNumber={content.mobileButtonNumber}
           />
           {children}
+          <Footer
+            footerHead={content.footer_head}
+            footerSubhead={content.footer_subhead}
+            footerImages={content.footer_images}
+            backgroundImg={content.footer_background.filename}
+            newsletterTitle={content.newsletter_title}
+            newsletterDescription={content.newsletter_description}
+            newsletterBackground={content.newsletter_background.filename}
+            supportLogos={content.support_logos}
+            footerLinks={content.footer}
+            copyright={content.copyright}
+          />
         </body>
       </StoryblokPrivider>
     </html>

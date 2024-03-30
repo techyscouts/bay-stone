@@ -60,7 +60,7 @@ const Navbar = ({
             </Link>
             <DesktopMenuItem navItems={navItems} />
           </div>
-          <div className="relative flex gap-2 xl:gap-4">
+          <div className="relative flex gap-4">
             <Button className="blue-main hidden font-urbane text-sm font-semibold text-white-1 xl:block xl:text-base">
               {buttonName}
             </Button>
