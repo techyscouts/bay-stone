@@ -36,6 +36,7 @@ const config = {
         },
         gray: {
           1: '#434343',
+          2: 'rgba(19, 85, 106, 0.50)',
         },
       },
       keyframes: {

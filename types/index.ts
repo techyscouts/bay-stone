@@ -48,6 +48,13 @@ export interface Image {
   is_private: boolean;
   is_external_url: boolean;
 }
+export interface Links {
+  id: string;
+  url: string;
+  linktype: string;
+  fieldtype: string;
+  cached_url: string;
+}
 
 export interface HeroCarousel {
   _uid: string;
@@ -56,6 +63,7 @@ export interface HeroCarousel {
   subHeader: string;
   button_title: string;
   background_image: Image;
+  button_link: Links;
   _editable: string;
 }
 
