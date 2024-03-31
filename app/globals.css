@@ -25,6 +25,15 @@
   clip-path: polygon(50% 0, 100% 100%, 0% 100%);
 }
 
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+}
+.embla__slide {
+  flex: 0 0 100%;
+}
+
 @layer utilities {
   .wrapper {
     @apply w-[92%]  2xl:w-[90%] max-w-[1376px] mx-auto;

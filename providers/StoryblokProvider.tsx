@@ -1,5 +1,5 @@
 'use client';
-
+import { components } from '@/components/components-list';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import { ReactNode } from 'react';
 
@@ -9,6 +9,7 @@ storyblokInit({
   apiOptions: {
     region: 'us',
   },
+  components,
 });
 
 export default function StoryblokPrivider({
