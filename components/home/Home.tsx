@@ -16,7 +16,7 @@ const Home = ({ blok }: { blok: any }) => {
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}
       </section>
-      <section className="bg-white-1 pt-8 xl:px-[68px] xl:py-20">
+      <section className="bg-white-1 py-8 xl:px-[68px] xl:py-20">
         <div className="wrapper flex flex-col gap-10">
           <article className="flex items-center justify-between max-sm:justify-center">
             <h1
