@@ -16,9 +16,15 @@ const Home = ({ blok }: { blok: any }) => {
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}
       </section>
-      <section className="bg-white-1 py-8 xl:px-[68px] xl:py-20">
+      <section
+        className="bg-white-1 py-8 xl:py-20"
+        {...storyblokEditable(blok)}
+      >
         <div className="wrapper flex flex-col gap-10">
-          <article className="flex items-center justify-between max-sm:justify-center">
+          <article
+            className="flex items-center justify-between max-sm:justify-center"
+            {...storyblokEditable(blok)}
+          >
             <h1
               className="text-32 xl:text-48 font-medium text-blue-main"
               {...storyblokEditable(blok)}
@@ -55,6 +61,13 @@ const Home = ({ blok }: { blok: any }) => {
         {blok.premium_tile.map((tile: any) => (
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}
+      </section>
+      <section className="py-10 xl:py-[120px]" {...storyblokEditable}>
+        <div className="wrapper">
+          {blok.explore_selection.map((tile: any) => (
+            <StoryblokComponent blok={tile} key={tile._uid} />
+          ))}
+        </div>
       </section>
     </div>
   );
