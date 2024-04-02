@@ -5,9 +5,9 @@ const sbParams: ISbStoriesParams = {
     process.env.NEXT_PUBLIC_SB_VERSION === 'draft' ? 'draft' : 'published',
 };
 
-export async function fetchHeaderFooter() {
+export async function fetchData(slug: string) {
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/header-footer`, sbParams, {
+  return storyblokApi.get(`cdn/stories/${slug}`, sbParams, {
     cache: 'no-store',
   });
 }

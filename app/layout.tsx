@@ -7,7 +7,7 @@ import { Zilla_Slab } from 'next/font/google';
 import './globals.css';
 import { Footer, Navbar } from '@/components/shared';
 import StoryblokPrivider from '@/providers/StoryblokProvider';
-import { fetchHeaderFooter } from '@/queries/storyblokQueries';
+import { fetchData } from '@/queries/storyblokQueries';
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_SB_ACCESS_TOKEN,
@@ -41,7 +41,7 @@ export default async function RootLayout({
     data: {
       story: { content },
     },
-  } = await fetchHeaderFooter();
+  } = await fetchData('header-footer');
 
   return (
     <html lang="en">

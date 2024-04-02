@@ -82,7 +82,7 @@ const Navbar = ({
               />
               {isSearchOpen && (
                 <div ref={searchRef} className="relative max-sm:hidden">
-                  <div className="search-boxShadow absolute right-0 top-8 flex flex-col rounded-lg bg-white-1 p-2.5">
+                  <div className="search-boxShadow absolute right-0 top-8 z-10 flex flex-col rounded-lg bg-white-1 p-2.5">
                     <div className="triangle absolute -top-3 right-1 size-4 bg-white-1" />
                     <Image
                       src="/icons/search.svg"
@@ -114,7 +114,7 @@ const Navbar = ({
       </section>
       <nav
         className={cn(
-          'absolute top-[120px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden',
+          'absolute top-[120px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden z-10 bg-white-1 nav-shadow',
           { 'translate-x-0': isMobileMenuOpen }
         )}
       >

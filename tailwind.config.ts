@@ -30,12 +30,15 @@ const config = {
         white: {
           1: '#FFFFFF',
           2: '#F6FDFF',
+          3: 'rgba(255, 255, 255, 0.70)',
         },
         blue: {
           1: '#1E708A',
+          main: '#13556A',
         },
         gray: {
           1: '#434343',
+          2: 'rgba(19, 85, 106, 0.50)',
         },
       },
       keyframes: {
