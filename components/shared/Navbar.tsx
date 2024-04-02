@@ -82,7 +82,7 @@ const Navbar = ({
               />
               {isSearchOpen && (
                 <div ref={searchRef} className="relative max-sm:hidden">
-                  <div className="search-boxShadow absolute right-0 top-8 flex flex-col rounded-lg bg-white-1 p-2.5">
+                  <div className="search-boxShadow absolute right-0 top-8 z-10 flex flex-col rounded-lg bg-white-1 p-2.5">
                     <div className="triangle absolute -top-3 right-1 size-4 bg-white-1" />
                     <Image
                       src="/icons/search.svg"

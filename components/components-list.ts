@@ -3,6 +3,7 @@ import {
   ExploreHome,
   HeroCarousel,
   Home,
+  ImageWithDescription,
   NewsCard,
 } from './home';
 
@@ -12,4 +13,5 @@ export const components = {
   description_home: DescriptionHome,
   newscard: NewsCard,
   explore_home: ExploreHome,
+  image_with_description: ImageWithDescription,
 };

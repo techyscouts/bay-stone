@@ -62,9 +62,16 @@ const Home = ({ blok }: { blok: any }) => {
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}
       </section>
-      <section className="py-10 xl:py-[120px]" {...storyblokEditable}>
+      <section className="py-10 xl:py-[110px]" {...storyblokEditable}>
         <div className="wrapper">
           {blok.explore_selection.map((tile: any) => (
+            <StoryblokComponent blok={tile} key={tile._uid} />
+          ))}
+        </div>
+      </section>
+      <section className="py-10 xl:py-[110px]" {...storyblokEditable}>
+        <div className="wrapper">
+          {blok.contact_description.map((tile: any) => (
             <StoryblokComponent blok={tile} key={tile._uid} />
           ))}
         </div>
