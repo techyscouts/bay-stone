@@ -5,6 +5,7 @@ import {
   Home,
   ImageWithDescription,
   NewsCard,
+  TestimonialBlock,
 } from './home';
 
 export const components = {
@@ -14,4 +15,5 @@ export const components = {
   newscard: NewsCard,
   explore_home: ExploreHome,
   image_with_description: ImageWithDescription,
+  testimonial_block: TestimonialBlock,
 };

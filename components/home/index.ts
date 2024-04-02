@@ -4,7 +4,10 @@ import DescriptionHome from './DescriptionHome';
 import NewsCard from './NewsCard';
 import ExploreHome from './ExploreHome';
 import ImageWithDescription from './ImageWithDescription';
-
+import Carousel from './Carousel';
+import NewsCarousel from './NewsCarousel';
+import TestimonialCarousel from './TestimonialCarousel';
+import TestimonialBlock from './TestimonialBlock';
 export {
   Home,
   HeroCarousel,
@@ -12,4 +15,8 @@ export {
   NewsCard,
   ExploreHome,
   ImageWithDescription,
+  Carousel,
+  NewsCarousel,
+  TestimonialCarousel,
+  TestimonialBlock,
 };

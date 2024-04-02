@@ -7,9 +7,9 @@ import Autoplay from 'embla-carousel-autoplay';
 
 import { DotButton, useDotButton } from './DotButton';
 
-const Carousel = ({ blok }: { blok: any }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 80 }, [
-    Autoplay({ delay: 8000 }),
+const TestimonialCarousel = ({ blok }: { blok: any }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 25 }, [
+    Autoplay({ delay: 6000 }),
   ]);
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay;
@@ -28,15 +28,15 @@ const Carousel = ({ blok }: { blok: any }) => {
   );
   return (
     <section
-      className="relative mx-auto size-full max-w-screen-2xl overflow-hidden"
+      className="flex h-fit w-full flex-col overflow-hidden py-5 xl:max-w-[580px] 2xl:max-w-[674px]"
       ref={emblaRef}
     >
-      <div className="flex h-full " {...storyblokEditable(blok)}>
-        {blok.hero_section.map((carousel: any) => (
+      <div className="flex h-fit" {...storyblokEditable(blok)}>
+        {blok.testimonial.map((carousel: any) => (
           <StoryblokComponent blok={carousel} key={carousel._uid} />
         ))}
       </div>
-      <div className="flex-center bottom-[53px] left-1/2 flex gap-5 max-xl:py-10 xl:absolute">
+      <div className="flex-center gap-5 pt-5 ">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -49,4 +49,4 @@ const Carousel = ({ blok }: { blok: any }) => {
   );
 };
 
-export default Carousel;
+export default TestimonialCarousel;
