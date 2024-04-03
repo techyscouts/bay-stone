@@ -35,12 +35,14 @@ const DescriptionHome = ({ blok }: { blok: any }) => {
           >
             {render(blok.description)}
           </div>
-          <Button
-            className="text-16 px-10 py-2.5 font-semibold text-white-1"
-            {...storyblokEditable(blok)}
-          >
-            {blok.button_title}
-          </Button>
+          {blok.button_title && (
+            <Button
+              className="text-16 px-10 py-2.5 font-semibold text-white-1"
+              {...storyblokEditable(blok)}
+            >
+              {blok.button_title}
+            </Button>
+          )}
         </article>
       </div>
     </div>
