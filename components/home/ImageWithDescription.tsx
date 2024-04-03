@@ -8,10 +8,12 @@ import Image from 'next/image';
 const ImageWithDescription = ({ blok }: { blok: any }) => {
   return (
     <div
-      className={cn('flex flex-col-reverse xl:flex-row gap-5 2xl:gap-10')}
+      className={cn('flex flex-col-reverse xl:flex-row gap-5 2xl:gap-10', {
+        'xl:flex-row-reverse': blok.flex_direction === 'reverse',
+      })}
       {...storyblokEditable(blok)}
     >
-      <article className="flex w-full flex-col items-center font-urbane text-blue-main max-xl:justify-center xl:max-w-[470px]">
+      <article className="flex w-full flex-col items-center justify-center font-urbane text-blue-main max-xl:justify-center xl:max-w-[470px]">
         <p
           className="text-24 xl:text-32 font-light"
           {...storyblokEditable(blok)}
@@ -50,7 +52,7 @@ const ImageWithDescription = ({ blok }: { blok: any }) => {
           width={830}
           height={700}
           alt="image"
-          className="size-full object-contain xl:max-w-[8300px]"
+          className={'size-full object-cover xl:max-w-[8300px]'}
         />
       </div>
     </div>
