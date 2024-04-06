@@ -1,3 +1,4 @@
+import { AboutUs } from './about';
 import {
   DescriptionHome,
   ExploreHome,
@@ -7,6 +8,7 @@ import {
   NewsCard,
   TestimonialBlock,
 } from './home';
+import { PageHeader } from './shared';
 
 export const components = {
   home: Home,
@@ -16,4 +18,7 @@ export const components = {
   explore_home: ExploreHome,
   image_with_description: ImageWithDescription,
   testimonial_block: TestimonialBlock,
+  // about bay stone page
+  aboutBayStone: AboutUs,
+  page_header: PageHeader,
 };
