@@ -4,6 +4,7 @@ import MobileMenuItem from './MobileMenuItem';
 import Footer from './Footer';
 import Newsletter from './Newsletter';
 import PageHeader from './PageHeader';
+import TitleAndDescription from './TitleAndDescription';
 
 export {
   Navbar,
@@ -12,4 +13,5 @@ export {
   Footer,
   Newsletter,
   PageHeader,
+  TitleAndDescription,
 };
