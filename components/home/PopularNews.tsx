@@ -22,7 +22,6 @@ async function getArticles() {
 
 const PopularNews = async ({ blok }: { blok: any }) => {
   const data = await getArticles();
-  console.log(data);
   return (
     <section
       className="flex size-full flex-col gap-10"

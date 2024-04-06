@@ -1,15 +1,18 @@
-const page = ({
+import { fetchData } from '@/queries/storyblokQueries';
+import StoryblokStory from '@storyblok/react/story';
+
+const page = async ({
   params,
 }: {
   params: {
     slug: string;
   };
 }) => {
+  const { data } = await fetchData(`news/${params.slug}`);
   return (
-    <div>
-      <h1>{params.slug}</h1>
-      <p>News page</p>
-    </div>
+    <main className="size-full font-urbane">
+      <StoryblokStory story={data.story} />
+    </main>
   );
 };
 

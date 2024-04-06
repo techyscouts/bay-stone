@@ -32,7 +32,7 @@ const AllNews = async ({ blok }: { blok: any }) => {
           <NewsTeaserCard
             key={article.id}
             blok={article.content}
-            slug={article.news}
+            slug={article.name}
           />
         ))}
       </div>
