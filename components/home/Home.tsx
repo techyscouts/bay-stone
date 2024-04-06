@@ -1,9 +1,7 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react/rsc';
-import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button } from '../ui/button';
-import { Carousel, NewsCarousel, TestimonialCarousel } from '.';
+import { Carousel, TestimonialCarousel } from '.';
 
 const Home = ({ blok }: { blok: any }) => {
   return (
@@ -21,38 +19,11 @@ const Home = ({ blok }: { blok: any }) => {
         className="bg-white-1 py-8 xl:py-20"
         {...storyblokEditable(blok)}
       >
-        <div className="wrapper flex flex-col gap-10">
-          <article
-            className="flex items-center justify-between max-sm:justify-center"
-            {...storyblokEditable(blok)}
-          >
-            <h1
-              className="text-32 xl:text-48 font-medium text-blue-main"
-              {...storyblokEditable(blok)}
-            >
-              {blok.baystone_newstitle}
-            </h1>
-            <Button
-              asChild
-              className="blue-main text-16 px-10 py-2.5 font-semibold text-white-1 max-sm:hidden"
-            >
-              <Link href="/news">{blok.newsbutton_text}</Link>
-            </Button>
-          </article>
-          <section className="grid grid-cols-3 max-xl:hidden  xl:gap-5 2xl:gap-10">
-            {blok.baystone_news.map((news: any) => (
-              <StoryblokComponent blok={news} key={news._uid} />
-            ))}
-          </section>
-          <NewsCarousel blok={blok} />
-          <div className="flex-center pb-8 sm:hidden">
-            <Button
-              asChild
-              className="blue-main text-16 px-10 py-2.5 font-semibold text-white-1"
-            >
-              <Link href="/news">{blok.newsbutton_text}</Link>
-            </Button>
-          </div>
+        <div className="wrapper size-full">
+          {blok.baystone_news.map((news: any) => (
+            <StoryblokComponent blok={news} key={news._uid} />
+          ))}
+          {/* <NewsCarousel blok={blok} /> */}
         </div>
       </section>
       <section
