@@ -3,7 +3,10 @@ import { render } from 'storyblok-rich-text-react-renderer';
 
 const TitleAndDescription = ({ blok }: { blok: any }) => {
   return (
-    <article className="flex flex-col items-center gap-5">
+    <article
+      className="flex flex-col items-center gap-5"
+      {...storyblokEditable(blok)}
+    >
       <h1
         className="text-32 xl:text-48 text-center font-medium text-blue-main"
         {...storyblokEditable(blok)}

@@ -12,6 +12,7 @@ import {
 import { PageHeader, TitleAndDescription } from './shared';
 import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 import { PrivacyPolicy } from './privacy-policy';
+import TermsAndConditions from './terms-conditions/TermsAndConditions';
 
 export const components = {
   home: Home,
@@ -31,6 +32,8 @@ export const components = {
   news: NewsDetail,
   // privacy policy page
   privacy_policy: PrivacyPolicy,
+  // terms and conditions page
+  terms_conditions: TermsAndConditions,
   // shared components
   title_and_description: TitleAndDescription,
 };
