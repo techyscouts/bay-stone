@@ -38,7 +38,11 @@ const PopularNews = async ({ blok }: { blok: any }) => {
         {...storyblokEditable(data)}
       >
         {data.map((article: any) => (
-          <NewsTeaserCard key={article.id} blok={article.content} />
+          <NewsTeaserCard
+            key={article.id}
+            blok={article.content}
+            slug={article.name}
+          />
         ))}
       </div>
       <div {...storyblokEditable(data)} className="size-full">

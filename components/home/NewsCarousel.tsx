@@ -11,7 +11,11 @@ const NewsCarousel = ({ blok }: { blok: any }) => {
     <section className="overflow-hidden xl:hidden" ref={emblaRef}>
       <div className="flex size-full">
         {blok.map((article: any) => (
-          <NewsTeaserCard key={article.id} blok={article.content} />
+          <NewsTeaserCard
+            key={article.id}
+            blok={article.content}
+            slug={article.name}
+          />
         ))}
       </div>
       <div className="flex-center gap-5 pt-[30px]">

@@ -10,7 +10,7 @@ import {
   TestimonialBlock,
 } from './home';
 import { PageHeader } from './shared';
-import { AllNews, NewsLanding } from './news-landing';
+import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 
 export const components = {
   home: Home,
@@ -27,4 +27,5 @@ export const components = {
   // news landing page
   news_landing: NewsLanding,
   all_news: AllNews,
+  news: NewsDetail,
 };

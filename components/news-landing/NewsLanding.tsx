@@ -1,6 +1,6 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react/rsc';
 
-const NewsLanding = ({ blok }: { blok: any }) => {
+const NewsLanding = async ({ blok }: { blok: any }) => {
   return (
     <section className="size-full" {...storyblokEditable(blok)}>
       <div>
