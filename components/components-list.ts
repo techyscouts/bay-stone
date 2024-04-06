@@ -9,8 +9,9 @@ import {
   PopularNews,
   TestimonialBlock,
 } from './home';
-import { PageHeader } from './shared';
+import { PageHeader, TitleAndDescription } from './shared';
 import { AllNews, NewsDetail, NewsLanding } from './news-landing';
+import { PrivacyPolicy } from './privacy-policy';
 
 export const components = {
   home: Home,
@@ -28,4 +29,8 @@ export const components = {
   news_landing: NewsLanding,
   all_news: AllNews,
   news: NewsDetail,
+  // privacy policy page
+  privacy_policy: PrivacyPolicy,
+  // shared components
+  title_and_description: TitleAndDescription,
 };
