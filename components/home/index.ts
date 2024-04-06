@@ -8,6 +8,7 @@ import Carousel from './Carousel';
 import NewsCarousel from './NewsCarousel';
 import TestimonialCarousel from './TestimonialCarousel';
 import TestimonialBlock from './TestimonialBlock';
+import PopularNews from './PopularNews';
 export {
   Home,
   HeroCarousel,
@@ -19,4 +20,5 @@ export {
   NewsCarousel,
   TestimonialCarousel,
   TestimonialBlock,
+  PopularNews,
 };

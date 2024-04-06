@@ -6,9 +6,11 @@ import {
   Home,
   ImageWithDescription,
   NewsCard,
+  PopularNews,
   TestimonialBlock,
 } from './home';
 import { PageHeader } from './shared';
+import { AllNews, NewsLanding } from './news-landing';
 
 export const components = {
   home: Home,
@@ -18,7 +20,11 @@ export const components = {
   explore_home: ExploreHome,
   image_with_description: ImageWithDescription,
   testimonial_block: TestimonialBlock,
+  popular_news: PopularNews,
   // about bay stone page
   aboutBayStone: AboutUs,
   page_header: PageHeader,
+  // news landing page
+  news_landing: NewsLanding,
+  all_news: AllNews,
 };
