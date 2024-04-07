@@ -9,7 +9,7 @@ import {
   PopularNews,
   TestimonialBlock,
 } from './home';
-import { PageHeader, TitleAndDescription } from './shared';
+import { PageHeader, ProductCollections, TitleAndDescription } from './shared';
 import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 import { PrivacyPolicy } from './privacy-policy';
 import TermsAndConditions from './terms-conditions/TermsAndConditions';
@@ -41,4 +41,6 @@ export const components = {
   schedule_appointment: Schedule,
   hero_schedule: HeroSchedule,
   schedule_service: ServiceSchedule,
+  // procuct collections single
+  product_collections: ProductCollections,
 };

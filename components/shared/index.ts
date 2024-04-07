@@ -5,6 +5,9 @@ import Footer from './Footer';
 import Newsletter from './Newsletter';
 import PageHeader from './PageHeader';
 import TitleAndDescription from './TitleAndDescription';
+import ProductCollections from './ProductCollections';
+import ProductCarousel from './Product-carousel/ProductCarousel';
+import GalleryItemModal from './GalleryItemModal';
 
 export {
   Navbar,
@@ -14,4 +17,7 @@ export {
   Newsletter,
   PageHeader,
   TitleAndDescription,
+  ProductCollections,
+  ProductCarousel,
+  GalleryItemModal,
 };
