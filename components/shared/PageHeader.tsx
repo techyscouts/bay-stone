@@ -13,12 +13,14 @@ const PageHeader = ({ blok }: { blok: any }) => {
       {...storyblokEditable(blok)}
     >
       <article className={'hero-linear w-full py-[40px]'}>
-        <h1
-          className="text-32 md:text-48 2xl:text-64 wrapper font-medium text-white-1"
-          {...storyblokEditable(blok)}
-        >
-          {blok.title}
-        </h1>
+        <div className="wrapper">
+          <h1
+            className="text-32 md:text-48 2xl:text-64 w-full max-w-[700px] font-medium text-white-1"
+            {...storyblokEditable(blok)}
+          >
+            {blok.title}
+          </h1>
+        </div>
       </article>
     </header>
   );
