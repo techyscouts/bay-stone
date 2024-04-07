@@ -5,7 +5,7 @@ import { render } from 'storyblok-rich-text-react-renderer';
 const HeroSchedule = ({ blok }: { blok: any }) => {
   return (
     <section className="flex flex-col-reverse gap-6 xl:flex-row xl:gap-10 ">
-      <article className="flex w-full flex-col gap-10 xl:max-w-[670px] 2xl:max-w-[740px]">
+      <article className="flex w-full flex-col gap-10 xl:max-w-[670px] 2xl:max-w-[710px]">
         <div className="flex flex-col gap-3">
           <h1
             className="text-32 text-48 text-center font-medium text-blue-main"

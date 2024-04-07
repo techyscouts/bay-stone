@@ -13,7 +13,7 @@ import { PageHeader, TitleAndDescription } from './shared';
 import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 import { PrivacyPolicy } from './privacy-policy';
 import TermsAndConditions from './terms-conditions/TermsAndConditions';
-import { HeroSchedule, Schedule } from './schedule';
+import { HeroSchedule, Schedule, ServiceSchedule } from './schedule';
 
 export const components = {
   home: Home,
@@ -40,4 +40,5 @@ export const components = {
   // schedule appointment page
   schedule_appointment: Schedule,
   hero_schedule: HeroSchedule,
+  schedule_service: ServiceSchedule,
 };
