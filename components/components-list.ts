@@ -9,7 +9,12 @@ import {
   PopularNews,
   TestimonialBlock,
 } from './home';
-import { PageHeader, ProductCollections, TitleAndDescription } from './shared';
+import {
+  NotFound,
+  PageHeader,
+  ProductCollections,
+  TitleAndDescription,
+} from './shared';
 import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 import { PrivacyPolicy } from './privacy-policy';
 import TermsAndConditions from './terms-conditions/TermsAndConditions';
@@ -47,4 +52,6 @@ export const components = {
   // gallery page
   gallery: Gallery,
   gallery_carousel: GalleryCarousel,
+  // not found page
+  notFound: NotFound,
 };
