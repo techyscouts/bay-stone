@@ -14,7 +14,7 @@ const sbParams: ISbStoriesParams = {
 
 async function getArticles() {
   const storyblokApi = getStoryblokApi();
-  const data = await storyblokApi.get(`cdn/stories/`, sbParams, {
+  const data = await storyblokApi.get(`cdn/stories/home`, sbParams, {
     cache: 'no-store',
   });
   return data.data.rels;
