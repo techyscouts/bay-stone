@@ -14,6 +14,7 @@ import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 import { PrivacyPolicy } from './privacy-policy';
 import TermsAndConditions from './terms-conditions/TermsAndConditions';
 import { HeroSchedule, Schedule, ServiceSchedule } from './schedule';
+import { Gallery, GalleryCarousel } from './gallery';
 
 export const components = {
   home: Home,
@@ -43,4 +44,7 @@ export const components = {
   schedule_service: ServiceSchedule,
   // procuct collections single
   product_collections: ProductCollections,
+  // gallery page
+  gallery: Gallery,
+  gallery_carousel: GalleryCarousel,
 };
