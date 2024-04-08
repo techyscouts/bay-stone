@@ -8,6 +8,7 @@ import TitleAndDescription from './TitleAndDescription';
 import ProductCollections from './ProductCollections';
 import ProductCarousel from './Product-carousel/ProductCarousel';
 import GalleryItemModal from './GalleryItemModal';
+import NotFound from './NotFound';
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   ProductCollections,
   ProductCarousel,
   GalleryItemModal,
+  NotFound,
 };
