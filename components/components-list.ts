@@ -20,6 +20,7 @@ import { PrivacyPolicy } from './privacy-policy';
 import TermsAndConditions from './terms-conditions/TermsAndConditions';
 import { HeroSchedule, Schedule, ServiceSchedule } from './schedule';
 import { Gallery, GalleryCarousel } from './gallery';
+import { OurProduct } from './our-products';
 
 export const components = {
   home: Home,
@@ -54,4 +55,6 @@ export const components = {
   gallery_carousel: GalleryCarousel,
   // not found page
   notFound: NotFound,
+  // our products page,
+  ourProducts: OurProduct,
 };

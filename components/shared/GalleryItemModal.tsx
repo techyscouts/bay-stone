@@ -20,6 +20,7 @@ const GalleryItemModal = ({ image }: { image: any }) => {
           alt={image.name}
           width={315}
           height={315}
+          priority
           className="h-[315px] w-full object-cover"
           {...storyblokEditable(image)}
         />

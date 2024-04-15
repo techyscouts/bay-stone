@@ -23,6 +23,9 @@ const config = {
         zillaSlab: ['var(--font-zillaSlab)'],
       },
       colors: {
+        yellow: {
+          main: '#DE9300',
+        },
         black: {
           1: '#121212',
           2: '#13556A',
@@ -39,6 +42,7 @@ const config = {
           main: '#13556A',
         },
         gray: {
+          light: '#F1F1F1',
           1: '#434343',
           2: 'rgba(19, 85, 106, 0.50)',
           3: 'rgba(0, 0, 0, 0.40)',

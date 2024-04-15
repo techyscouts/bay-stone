@@ -1,3 +1,4 @@
+'use server';
 import { ISbStoriesParams, getStoryblokApi } from '@storyblok/react/rsc';
 
 const sbParams: ISbStoriesParams = {
