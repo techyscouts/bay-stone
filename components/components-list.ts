@@ -21,6 +21,7 @@ import TermsAndConditions from './terms-conditions/TermsAndConditions';
 import { HeroSchedule, Schedule, ServiceSchedule } from './schedule';
 import { Gallery, GalleryCarousel } from './gallery';
 import { OurProduct } from './our-products';
+import { Contact, FormDetail, LocationDetails } from './contact';
 
 export const components = {
   home: Home,
@@ -57,4 +58,8 @@ export const components = {
   notFound: NotFound,
   // our products page,
   ourProducts: OurProduct,
+  // contact page
+  contact: Contact,
+  location_details: LocationDetails,
+  form_detail: FormDetail,
 };

@@ -71,6 +71,9 @@
   .flex-center {
     @apply flex items-center justify-center;
   }
+  .text-12 {
+    @apply text-[12px] leading-[20px];
+  }
   .text-14 {
     @apply text-[14px] leading-[24px];
   }
