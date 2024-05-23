@@ -7,8 +7,13 @@ const sbParams: ISbStoriesParams = {
 };
 
 export async function fetchData(slug: string) {
-  const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/${slug}`, sbParams, {
-    cache: 'no-store',
-  });
+  try {
+    const storyblokApi = getStoryblokApi();
+    return storyblokApi.get(`cdn/stories/${slug}`, sbParams, {
+      cache: 'no-store',
+    });
+  } catch (error) {
+    console.error(error);
+    throw new Error('Failed to fetch data');
+  }
 }
