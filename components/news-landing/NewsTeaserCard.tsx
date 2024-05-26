@@ -12,7 +12,7 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
       {...storyblokEditable(blok)}
     >
       <header
-        className="flex flex-col rounded-t-lg pb-[30px] pl-[30px] pt-[118px] xl:pt-[200px]"
+        className="relative flex flex-col overflow-hidden rounded-t-lg pb-[30px] pl-[30px] pt-[118px] xl:pt-[200px]"
         style={{
           backgroundImage: `url(${blok.image.filename})`,
           backgroundSize: 'cover',
@@ -21,12 +21,12 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
         {...storyblokEditable(blok)}
       >
         <h2
-          className="text-32 font-semibold text-white-1"
+          className="text-32 z-10 font-semibold text-white-1"
           {...storyblokEditable(blok)}
         >
           {blok.title}
         </h2>
-        <figure className="flex gap-2.5">
+        <figure className="z-10 flex gap-2.5">
           <Image
             src="/icons/author-icon.svg"
             width={24}
@@ -40,6 +40,7 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
             {blok.author}
           </p>
         </figure>
+        <div className="news-bg-shadow absolute left-0 top-0 size-full" />
       </header>
       <article className="flex flex-col p-5">
         <div className="flex justify-between">

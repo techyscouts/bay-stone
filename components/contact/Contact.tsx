@@ -13,7 +13,7 @@ const Contact = ({ blok }: { blok: any }) => {
           <StoryblokComponent key={blok._uid} blok={blok} />
         ))}
       </div>
-      <div className="mx-auto size-full max-w-screen-2xl">
+      <div className="size-full">
         {blok.contact_form.map((blok: any) => (
           <StoryblokComponent key={blok._uid} blok={blok} />
         ))}

@@ -24,10 +24,10 @@ const HeroCarousel = ({ blok }: { blok: any }) => {
       </div>
       <article
         className={cn(
-          'hero-linear w-full max-xl:bg-black-1  py-[30px] xl:pl-[68px] font-urbane text-white-1'
+          'hero-linear w-full max-xl:bg-black-1  py-[30px] font-urbane text-white-1'
         )}
       >
-        <div className="flex w-full flex-col gap-10 max-xl:items-center">
+        <div className="wrapper flex w-full flex-col gap-10 max-xl:items-center">
           <div className="flex flex-col gap-3">
             <p
               className="text-24 xl:text-32 font-light"

@@ -37,7 +37,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
         <header className="flex w-full justify-end">
           <Button
             className="text-16 blue-main px-10 py-2.5 font-semibold text-white-1"
-            onClick={() => router.back()}
+            onClick={() => router.push('/')}
           >
             Back
           </Button>

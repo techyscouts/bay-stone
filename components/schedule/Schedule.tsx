@@ -31,7 +31,7 @@ const Schedule = ({ blok }: { blok: any }) => {
         </div>
       </div>
       <div
-        className="mx-auto flex w-full max-w-screen-2xl justify-center py-10 xl:py-20"
+        className="flex w-full justify-center py-10 xl:py-20"
         style={{
           backgroundImage: `url(${blok.form_background.filename})`,
           backgroundSize: 'cover',

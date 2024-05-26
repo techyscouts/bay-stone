@@ -1,6 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { render } from 'storyblok-rich-text-react-renderer';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const DescriptionHome = ({ blok }: { blok: any }) => {
   return (
@@ -40,7 +41,9 @@ const DescriptionHome = ({ blok }: { blok: any }) => {
               className="text-16 px-10 py-2.5 font-semibold text-white-1"
               {...storyblokEditable(blok)}
             >
-              {blok.button_title}
+              <Link href={`${blok.button_link.cached_url}`}>
+                {blok.button_title}
+              </Link>
             </Button>
           )}
         </article>

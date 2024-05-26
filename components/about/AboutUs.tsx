@@ -13,10 +13,7 @@ const AboutUs = ({ blok }: { blok: any }) => {
           <StoryblokComponent key={blok._uid} blok={blok} />
         ))}
       </section>
-      <section
-        className="mx-auto size-full max-w-screen-2xl"
-        {...storyblokEditable}
-      >
+      <section className="size-full" {...storyblokEditable}>
         {blok.design_team.map((tile: any) => (
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}

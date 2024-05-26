@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 const PageHeader = ({ blok }: { blok: any }) => {
   return (
     <header
-      className="mx-auto w-full max-w-screen-2xl py-8 xl:py-[50px]"
+      className="w-full py-8 xl:py-[50px]"
       style={{
         backgroundImage: `url(${blok.background_image.filename})`,
         backgroundSize: 'cover',

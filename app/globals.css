@@ -41,6 +41,14 @@
     linear-gradient(0deg, rgba(0, 0, 0, 0.28) 9.95%, rgba(0, 0, 0, 0) 36.29%);
 }
 
+.news-bg-shadow {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 9.95%,
+    rgba(0, 0, 0, 0) 36.29%
+  );
+}
+
 .search-boxShadow {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }

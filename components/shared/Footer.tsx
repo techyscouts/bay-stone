@@ -32,7 +32,7 @@ const Footer = ({
   return (
     <section className="flex size-full flex-col font-urbane">
       <div
-        className="mx-auto flex size-full max-w-screen-2xl flex-col"
+        className="flex size-full flex-col"
         style={{
           backgroundImage: `url(${backgroundImg})`,
           backgroundSize: 'cover',
