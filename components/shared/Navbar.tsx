@@ -10,6 +10,7 @@ import { navItem } from '@/types';
 import { Hamburger } from './small';
 import { cn } from '@/lib/utils';
 import { DesktopMenuItem, MobileMenuItem } from '.';
+import { useRouter } from 'next/navigation';
 
 interface NavbarProps {
   logo: string;
@@ -26,6 +27,7 @@ const Navbar = ({
   buttonName,
   mobileButtonNumber,
 }: NavbarProps) => {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -61,7 +63,12 @@ const Navbar = ({
             <DesktopMenuItem navItems={navItems} />
           </div>
           <div className="relative flex gap-4">
-            <Button className="blue-main hidden font-urbane text-sm font-semibold text-white-1 xl:block xl:text-base">
+            <Button
+              className="blue-main hidden font-urbane text-sm font-semibold text-white-1 xl:block xl:text-base"
+              onClick={() => {
+                router.push('/schedule-appointment');
+              }}
+            >
               {buttonName}
             </Button>
             <Image

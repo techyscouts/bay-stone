@@ -7,10 +7,7 @@ const Home = ({ blok }: { blok: any }) => {
   return (
     <div className="flex flex-col">
       <Carousel blok={blok} />
-      <section
-        className="mx-auto size-full max-w-screen-2xl"
-        {...storyblokEditable}
-      >
+      <section className="size-full " {...storyblokEditable}>
         {blok.luxury_tile.map((tile: any) => (
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}
@@ -26,10 +23,7 @@ const Home = ({ blok }: { blok: any }) => {
           {/* <NewsCarousel blok={blok} /> */}
         </div>
       </section>
-      <section
-        className="mx-auto size-full max-w-screen-2xl"
-        {...storyblokEditable}
-      >
+      <section className="size-full" {...storyblokEditable}>
         {blok.premium_tile.map((tile: any) => (
           <StoryblokComponent blok={tile} key={tile._uid} />
         ))}

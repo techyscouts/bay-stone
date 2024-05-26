@@ -27,10 +27,7 @@ const Carousel = ({ blok }: { blok: any }) => {
     onNavButtonClick
   );
   return (
-    <section
-      className="relative mx-auto size-full max-w-screen-2xl overflow-hidden"
-      ref={emblaRef}
-    >
+    <section className="relative size-full overflow-hidden" ref={emblaRef}>
       <div className="flex h-full " {...storyblokEditable(blok)}>
         {blok.hero_section.map((carousel: any) => (
           <StoryblokComponent blok={carousel} key={carousel._uid} />

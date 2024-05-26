@@ -9,7 +9,7 @@ const sbParams: ISbStoriesParams = {
 export async function fetchData(slug: string) {
   try {
     const storyblokApi = getStoryblokApi();
-    return storyblokApi.get(`cdn/stories/${slug}`, sbParams, {
+    return await storyblokApi.get(`cdn/stories/${slug}`, sbParams, {
       cache: 'no-store',
     });
   } catch (error) {
