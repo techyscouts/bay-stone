@@ -8,10 +8,12 @@ import './globals.css';
 import { Footer, Navbar } from '@/components/shared';
 import StoryblokPrivider from '@/providers/StoryblokProvider';
 import { fetchData } from '@/queries/storyblokQueries';
+import { components } from '@/components/components-list';
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_SB_ACCESS_TOKEN,
   use: [apiPlugin],
+  components,
   apiOptions: {
     region: 'us',
   },
