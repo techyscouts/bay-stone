@@ -1,5 +1,6 @@
-import { fetchData } from '@/queries/storyblokQueries';
 import StoryblokStory from '@storyblok/react/story';
+
+import { fetchData } from '@/queries/storyblokQueries';
 
 const page = async ({
   params,
@@ -9,8 +10,9 @@ const page = async ({
   };
 }) => {
   const { data } = await fetchData(`news/${params.slug}`);
+
   return (
-    <main className="size-full font-urbane">
+    <main className="flex size-full flex-col gap-14 font-urbane">
       <StoryblokStory story={data.story} />
     </main>
   );

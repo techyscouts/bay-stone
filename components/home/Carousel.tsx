@@ -1,4 +1,5 @@
 'use client';
+
 import { useCallback } from 'react';
 import { EmblaCarouselType } from 'embla-carousel';
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
@@ -8,8 +9,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import { DotButton, useDotButton } from './DotButton';
 
 const Carousel = ({ blok }: { blok: any }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 80 }, [
-    Autoplay({ delay: 8000 }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000 }),
   ]);
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay;

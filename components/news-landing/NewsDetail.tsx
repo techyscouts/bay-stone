@@ -1,11 +1,13 @@
 'use client';
 import Image from 'next/image';
-import { storyblokEditable } from '@storyblok/react';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import { render } from 'storyblok-rich-text-react-renderer';
-import { useRouter } from 'next/navigation';
 
 import { Button } from '../ui/button';
 import formatDate from '@/utils/dateFormatter';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 
 const IconAndDetail = ({
   icon,
@@ -20,7 +22,7 @@ const IconAndDetail = ({
     <figure className="flex gap-2.5" {...storyblokEditable(blok)}>
       <Image src={icon} width={24} height={24} alt="icon" />
       <p
-        className="text-16 lg:text-20 font-normal text-black-1"
+        className="text-16 lg:text-20 font-light text-black-1"
         {...storyblokEditable(blok)}
       >
         {detail}
@@ -30,16 +32,53 @@ const IconAndDetail = ({
 };
 
 const NewsDetail = ({ blok }: { blok: any }) => {
+  const [articles, setArticles] = useState<string[]>([]);
+  const { slug } = useParams();
   const router = useRouter();
+  const getArticles = async () => {
+    const storyblokApi = getStoryblokApi();
+    const { data } = await storyblokApi.get(`cdn/stories`, {
+      version: 'draft',
+      starts_with: 'news/',
+      is_startpage: false,
+    });
+    const slugArray = data.stories.map((item: any) => item.name);
+    setArticles(slugArray);
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
+
+  const handleNext = () => {
+    const currentIndex = articles.indexOf(slug as string);
+    if (currentIndex < articles.length - 1) {
+      const nextSlug = articles[currentIndex + 1];
+      router.push(`/news-landing/${nextSlug}`);
+    }
+  };
+
+  const handlePrevious = () => {
+    const currentIndex = articles.indexOf(slug as string);
+    if (currentIndex > 0) {
+      const previousSlug = articles[currentIndex - 1];
+      router.push(`/news-landing/${previousSlug}`);
+    }
+  };
+
+  const isLastArticle =
+    articles.indexOf(slug as string) === articles.length - 1;
+  const isFirstArticle = articles.indexOf(slug as string) === 0;
+
   return (
     <section className="wrapper py-7 md:py-10 xl:py-20">
       <div className="mx-auto flex w-full flex-col gap-8 lg:w-[88%] xl:gap-[55px]">
         <header className="flex w-full justify-end">
           <Button
-            className="text-16 blue-main px-10 py-2.5 font-semibold text-white-1"
-            onClick={() => router.push('/')}
+            asChild
+            className="text-16 blue-main-bg px-10 py-2.5 font-semibold text-white-1"
           >
-            Back
+            <Link href="/news-landing">Back</Link>
           </Button>
         </header>
         <Image
@@ -74,7 +113,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
             />
           </div>
         </article>
-        <article className="flex flex-col gap-3.5">
+        <article className="flex flex-col gap-3.5 border-b border-blue-main pb-14">
           <h2
             className="text-20 xl:text-32 font-light text-blue-main"
             {...storyblokEditable(blok)}
@@ -88,6 +127,22 @@ const NewsDetail = ({ blok }: { blok: any }) => {
             {render(blok.description)}
           </div>
         </article>
+        <div className="flex justify-between">
+          <Button
+            disabled={isFirstArticle}
+            className="max-w-[205px] border-2 border-blue-main bg-transparent font-semibold text-blue-main hover:bg-sky-100"
+            onClick={handlePrevious}
+          >
+            Previous News
+          </Button>
+          <Button
+            disabled={isLastArticle}
+            className="blue-main-bg font-semibold"
+            onClick={handleNext}
+          >
+            Next News
+          </Button>
+        </div>
       </div>
     </section>
   );

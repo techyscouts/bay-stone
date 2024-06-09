@@ -24,7 +24,7 @@ const ProductFilter = ({ data }: { data: any }) => {
                 className="text-16 cursor-pointer font-semibold text-yellow-main"
                 onClick={() => router.replace('/our-products')}
               >
-                clear All
+                Clear All
               </h2>
             </div>
             <div className="flex justify-between pt-[14px]">

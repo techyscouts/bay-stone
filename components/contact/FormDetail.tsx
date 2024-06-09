@@ -13,6 +13,7 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
+import { Button } from '../ui/button';
 
 const formSchema = z.object({
   name: z
@@ -82,7 +83,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                       <FormControl>
                         <Input
                           placeholder="Name*"
-                          className="w-full rounded-none border-2 border-blue-main bg-white-1 focus-visible:ring-0 "
+                          className="w-full rounded-none border-2 border-blue-main bg-white-1 font-light text-black-1 placeholder:text-black-1 focus-visible:ring-0 "
                           {...field}
                         />
                       </FormControl>
@@ -100,7 +101,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                       <FormControl>
                         <Input
                           placeholder="Email*"
-                          className="w-full rounded-none border-2 border-blue-main bg-white-1 focus-visible:ring-0"
+                          className="w-full rounded-none border-2 border-blue-main bg-white-1 text-black-1 placeholder:text-black-1 focus-visible:ring-0"
                           {...field}
                         />
                       </FormControl>
@@ -119,7 +120,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                     <FormControl>
                       <Textarea
                         placeholder="Message*"
-                        className="w-full rounded-none border-2 border-blue-main bg-white-1 focus-visible:ring-0 "
+                        className="w-full rounded-none border-2 border-blue-main bg-white-1 text-black-1 placeholder:text-black-1 focus-visible:ring-0 "
                         rows={6}
                         {...field}
                       />
@@ -129,6 +130,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                 </FormItem>
               )}
             />
+            <Button className="blue-main-bg max-w-[140px]">Submit</Button>
           </form>
         </Form>
       </div>

@@ -28,6 +28,7 @@ const TestimonialBlock = ({ blok }: { blok: any }) => {
           height={32}
         />
       </div>
+      <h1 className="text-24 mt-5 font-medium text-blue-main">{blok.client}</h1>
     </div>
   );
 };
