@@ -32,7 +32,7 @@ const Newsletter = ({
           className="text-16 border border-black-1 bg-white-1 py-2.5 pl-5  text-black-1"
           placeholder="Email Address"
         />
-        <Button className="blue-main text-16 max-w-[165px] px-10 py-2.5 font-semibold text-white-1">
+        <Button className="blue-main-bg text-16 max-w-[165px] px-10 py-2.5 font-semibold text-white-1">
           Subscribe
         </Button>
       </div>

@@ -8,8 +8,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import { DotButton, useDotButton } from './DotButton';
 
 const TestimonialCarousel = ({ blok }: { blok: any }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 25 }, [
-    Autoplay({ delay: 6000 }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000 }),
   ]);
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay;

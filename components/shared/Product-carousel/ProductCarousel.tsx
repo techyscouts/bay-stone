@@ -1,10 +1,11 @@
 'use client';
+
 import { useCallback } from 'react';
 import { EmblaCarouselType } from 'embla-carousel';
 import { storyblokEditable } from '@storyblok/react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { DotButton, useDotButton } from './DotButtonProduct';
+// import { DotButton, useDotButton } from './DotButtonProduct';
 import Image from 'next/image';
 import {
   NextButton,
@@ -26,10 +27,10 @@ const ProductCarousel = ({ blok }: { blok: any }) => {
     resetOrStop();
   }, []);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
-    emblaApi,
-    onNavButtonClick
-  );
+  // const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
+  //   emblaApi,
+  //   onNavButtonClick
+  // );
 
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(
     emblaApi,
@@ -57,7 +58,7 @@ const ProductCarousel = ({ blok }: { blok: any }) => {
           </div>
         ))}
       </div>
-      <div className="flex-center bottom-[53px] left-[47%] flex gap-5 max-xl:py-10 xl:absolute">
+      {/* <div className="flex-center bottom-[53px] left-[47%] flex gap-5 max-xl:py-10 xl:absolute">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -65,7 +66,7 @@ const ProductCarousel = ({ blok }: { blok: any }) => {
             selected={index === selectedIndex}
           />
         ))}
-      </div>
+      </div> */}
       <div className="absolute left-0 top-1/3 w-full px-5 xl:top-1/2 xl:px-10">
         <div className="flex w-full justify-between">
           <PrevButton onClick={onPrevButtonClick} />

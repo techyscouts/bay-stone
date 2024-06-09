@@ -64,20 +64,22 @@ const Navbar = ({
           </div>
           <div className="relative flex gap-4">
             <Button
-              className="blue-main hidden font-urbane text-sm font-semibold text-white-1 xl:block xl:text-base"
+              className="blue-main-bg hidden font-urbane text-sm font-semibold text-white-1 xl:block xl:text-base"
               onClick={() => {
                 router.push('/schedule-appointment');
               }}
             >
               {buttonName}
             </Button>
-            <Image
-              src="/icons/call.svg"
-              alt="Call Icon"
-              width={24}
-              height={24}
-              className="hidden object-contain xl:block"
-            />
+            <a href={`tel:${mobileButtonNumber}`} className="flex-center">
+              <Image
+                src="/icons/call.svg"
+                alt="Call Icon"
+                width={24}
+                height={24}
+                className="hidden object-contain xl:block"
+              />
+            </a>
             <div className="flex items-center">
               <Image
                 src="/icons/search.svg"
@@ -130,20 +132,22 @@ const Navbar = ({
           menuClose={() => setIsMobileMenuOpen(false)}
         />
         <div className="w-full py-5 pl-6 md:pl-[50px]">
-          <Button className="blue-main w-full max-w-[297px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1">
-            <Image
-              src="/icons/call.svg"
-              alt="Call Icon"
-              width={24}
-              height={24}
-              className="object-contain invert"
-            />
-            &nbsp;&nbsp;&nbsp;
-            {mobileButtonNumber}
+          <Button className="blue-main-bg w-full max-w-[297px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1">
+            <a href={`tel:${mobileButtonNumber}`} className="flex-center">
+              <Image
+                src="/icons/call.svg"
+                alt="Call Icon"
+                width={24}
+                height={24}
+                className="object-contain invert"
+              />
+              &nbsp;&nbsp;&nbsp;
+              {mobileButtonNumber}
+            </a>
           </Button>
         </div>
         <div className="w-full pb-5 pl-6 md:pl-[50px]">
-          <Button className="blue-main w-full max-w-[297px]  py-2.5 font-urbane text-base font-semibold text-white-1">
+          <Button className="w-full max-w-[297px] border  border-blue-main bg-transparent py-2.5 font-urbane text-base font-semibold text-blue-main">
             {buttonName}
           </Button>
         </div>

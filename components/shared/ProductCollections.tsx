@@ -1,3 +1,4 @@
+'use client';
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { render } from 'storyblok-rich-text-react-renderer';
 
@@ -5,9 +6,11 @@ import ProductCarousel from './Product-carousel/ProductCarousel';
 import GalleryItemModal from './GalleryItemModal';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
+import { useState } from 'react';
 
 const ProductCollections = ({ blok }: { blok: any }) => {
   const length = blok.image_gallery.length;
+  const [imageCount, setImageCount] = useState(16);
   return (
     <section className="size-full" {...storyblokEditable(blok)}>
       <div>
@@ -34,13 +37,16 @@ const ProductCollections = ({ blok }: { blok: any }) => {
           )}
           {...storyblokEditable(blok)}
         >
-          {blok.image_gallery.map((image: any) => (
+          {blok.image_gallery.slice(0, imageCount).map((image: any) => (
             <GalleryItemModal key={image.id} image={image} />
           ))}
         </section>
-        {length >= 20 && (
+        {length > imageCount && length >= 16 && length !== imageCount && (
           <div className="flex-center pt-5 xl:pt-10">
-            <Button className="text-16 px-10 py-2.5 font-semibold text-white-1">
+            <Button
+              className="text-16 px-10 py-2.5 font-semibold text-white-1"
+              onClick={() => setImageCount(length)}
+            >
               Load More
             </Button>
           </div>

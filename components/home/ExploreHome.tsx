@@ -2,6 +2,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import { Button } from '../ui/button';
 import { multiAssets } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ExploreHome = ({ blok }: { blok: any }) => {
   return (
@@ -31,8 +32,11 @@ const ExploreHome = ({ blok }: { blok: any }) => {
           {blok.header}
         </h1>
         <div className="pt-10">
-          <Button className="text-16 blue-main px-10 py-2.5 font-semibold text-white-1">
-            Shop Graphite
+          <Button
+            asChild
+            className="text-16 blue-main-bg px-10 py-2.5 font-semibold text-white-1"
+          >
+            <Link href={blok.button_link.cached_url}>{blok.button_text}</Link>
           </Button>
         </div>
       </div>

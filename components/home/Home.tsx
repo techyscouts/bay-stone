@@ -20,7 +20,6 @@ const Home = ({ blok }: { blok: any }) => {
           {blok.baystone_news.map((news: any) => (
             <StoryblokComponent blok={news} key={news._uid} />
           ))}
-          {/* <NewsCarousel blok={blok} /> */}
         </div>
       </section>
       <section className="size-full" {...storyblokEditable}>

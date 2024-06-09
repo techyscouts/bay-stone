@@ -20,7 +20,7 @@ const IconAndDetail = ({
     <figure className="flex gap-2.5" {...storyblokEditable(blok)}>
       <Image src={icon} width={24} height={24} alt="icon" />
       <p
-        className="text-16 lg:text-20 font-normal text-black-1"
+        className="text-16 lg:text-20 font-light text-black-1"
         {...storyblokEditable(blok)}
       >
         {detail}
@@ -36,8 +36,8 @@ const NewsDetail = ({ blok }: { blok: any }) => {
       <div className="mx-auto flex w-full flex-col gap-8 lg:w-[88%] xl:gap-[55px]">
         <header className="flex w-full justify-end">
           <Button
-            className="text-16 blue-main px-10 py-2.5 font-semibold text-white-1"
-            onClick={() => router.push('/')}
+            className="text-16 blue-main-bg px-10 py-2.5 font-semibold text-white-1"
+            onClick={() => router.push('/news-landing')}
           >
             Back
           </Button>

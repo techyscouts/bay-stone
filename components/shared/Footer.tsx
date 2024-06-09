@@ -41,7 +41,13 @@ const Footer = ({
       >
         <header className="flex size-full flex-col items-center py-5 font-medium text-white-1">
           <h2 className="text-24 xl:text-32">{footerHead}</h2>
-          <h1 className="text-32 xl:text-48 text-white-1">{footerSubhead}</h1>
+          <Link
+            href="https://www.instagram.com/baystonedepot/"
+            target="_blank"
+            className="text-32 xl:text-48 text-white-1"
+          >
+            {footerSubhead}
+          </Link>
         </header>
         <figure className="max-sm:wrapper mx-auto grid max-w-screen-2xl grid-cols-2 gap-9 pb-5 lg:grid-cols-4">
           {footerImages.map((image) => (
@@ -63,16 +69,21 @@ const Footer = ({
           <h1 className="text-20 xl:text-32 font-medium text-white-1">
             We Support
           </h1>
-          <figure className="flex flex-wrap justify-center gap-5 2xl:gap-10">
+          <figure className="flex flex-wrap items-center justify-center gap-5 2xl:gap-10">
             {supportLogos.map((logo) => (
-              <Image
+              <Link
+                href={logo.source ? logo.source : '/'}
                 key={logo.id}
-                src={logo.filename}
-                alt={logo.alt}
-                width={136}
-                height={50}
-                className="size-fit object-contain"
-              />
+                target="_blank"
+              >
+                <Image
+                  src={logo.filename}
+                  alt={logo.alt}
+                  width={136}
+                  height={50}
+                  className="size-fit object-contain"
+                />
+              </Link>
             ))}
           </figure>
         </div>

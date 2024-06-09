@@ -76,9 +76,9 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
         <div className="max-xl:flex-center xl:max-w-[172px]">
           <Button
             asChild
-            className="blue-main text-16 mt-5  px-10 py-2.5 font-semibold text-white-1"
+            className="blue-main-bg text-16 mt-5  px-10 py-2.5 font-semibold text-white-1"
           >
-            <Link href={`/news/${slug}`}>Read More</Link>
+            <Link href={`/news-landing/${slug}`}>Read More</Link>
           </Button>
         </div>
       </article>

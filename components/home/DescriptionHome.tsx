@@ -38,6 +38,7 @@ const DescriptionHome = ({ blok }: { blok: any }) => {
           </div>
           {blok.button_title && (
             <Button
+              asChild
               className="text-16 px-10 py-2.5 font-semibold text-white-1"
               {...storyblokEditable(blok)}
             >

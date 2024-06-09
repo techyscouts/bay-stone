@@ -35,7 +35,7 @@ const ImageWithDescription = ({ blok }: { blok: any }) => {
         {blok.button_title && (
           <Button
             asChild
-            className="blue-main text-16 px-10 py-2.5 font-semibold text-white-1"
+            className="blue-main-bg text-16 px-10 py-2.5 font-semibold text-white-1"
           >
             <Link
               href={`/${blok.button_link.cached_url}`}

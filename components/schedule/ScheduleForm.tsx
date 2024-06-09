@@ -134,7 +134,7 @@ const ScheduleForm = () => {
           <div className="flex-center">
             <Button
               type="submit"
-              className="blue-main text-16 max-w-[140px] px-40 py-2.5 font-semibold text-white-1"
+              className="blue-main-bg text-16 max-w-[176px] font-semibold text-white-1"
             >
               Submit
             </Button>

@@ -44,7 +44,7 @@ const page = async ({
             </div>
             <Button
               asChild
-              className="blue-main text-16 font-semibold text-white-1"
+              className="blue-main-bg text-16 font-semibold text-white-1"
             >
               <Link href={`/collection/${params.filter}`}>View All</Link>
             </Button>

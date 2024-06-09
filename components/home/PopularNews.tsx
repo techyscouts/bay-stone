@@ -5,6 +5,8 @@ import {
 } from '@storyblok/react/rsc';
 import NewsTeaserCard from '../news-landing/NewsTeaserCard';
 import NewsCarousel from './NewsCarousel';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const sbParams: ISbStoriesParams = {
   version:
@@ -27,12 +29,20 @@ const PopularNews = async ({ blok }: { blok: any }) => {
       className="flex size-full flex-col gap-10"
       {...storyblokEditable(data)}
     >
-      <h1
-        className="text-32 xl:text-48 font-medium text-blue-main"
-        {...storyblokEditable(blok)}
-      >
-        {blok.headline}
-      </h1>
+      <div className="flex items-center justify-between">
+        <h1
+          className="text-32 xl:text-48 font-medium text-blue-main"
+          {...storyblokEditable(blok)}
+        >
+          {blok.headline}
+        </h1>
+        <Button
+          asChild
+          className="blue-main-bg w-full max-w-[212px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1"
+        >
+          <Link href="/news-landing">See more news</Link>
+        </Button>
+      </div>
       <div
         className="grid size-full grid-cols-1 gap-10 max-xl:hidden xl:grid-cols-3"
         {...storyblokEditable(data)}

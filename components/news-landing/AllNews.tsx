@@ -1,4 +1,4 @@
-import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react';
 import NewsTeaserCard from './NewsTeaserCard';
 
 const getArticles = async () => {

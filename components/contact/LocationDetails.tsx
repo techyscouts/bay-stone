@@ -1,5 +1,6 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import Image from 'next/image';
+import { render } from 'storyblok-rich-text-react-renderer';
 
 const LocationDetails = ({ blok }: { blok: any }) => {
   return (
@@ -35,39 +36,34 @@ const LocationDetails = ({ blok }: { blok: any }) => {
             alt="location"
             className="mt-1.5"
           />
-          <p
+          <div
             className="text-16 w-full max-w-[200px] font-light text-black-1"
             {...storyblokEditable(blok)}
           >
-            {blok.location}
-          </p>
+            {render(blok.location)}
+          </div>
         </div>
-        <div className="flex w-full items-start gap-2 border-b border-gray-1 py-5">
-          <Image
-            src="/icons/call.svg"
-            width={15}
-            height={15}
-            alt="location"
-            className="mt-1.5"
-          />
+        <a
+          href={`tel:${blok.contact}`}
+          className="flex w-full gap-2 border-b border-gray-1 py-5"
+        >
+          <Image src="/icons/call-blue.svg" width={15} height={15} alt="call" />
           <p
             className="text-16 w-full max-w-[200px] font-light text-black-1"
             {...storyblokEditable(blok)}
           >
             {blok.contact}
           </p>
-        </div>
+        </a>
         <div
           className="flex w-full flex-col gap-5 border-b border-gray-1 py-5"
           {...storyblokEditable(blok)}
         >
-          <div className="flex gap-2">
-            <Image
-              src="/icons/email.svg"
-              width={15}
-              height={15}
-              alt="location"
-            />
+          <a
+            href={`mailto:${blok.customer_service_email}`}
+            className="flex gap-2"
+          >
+            <Image src="/icons/email.svg" width={15} height={15} alt="email" />
             <p className="text-16 w-full font-light text-black-1">
               Customer Service:{' '}
               <span
@@ -77,14 +73,9 @@ const LocationDetails = ({ blok }: { blok: any }) => {
                 {blok.customer_service_email}
               </span>
             </p>
-          </div>
-          <div className="flex gap-2">
-            <Image
-              src="/icons/email.svg"
-              width={15}
-              height={15}
-              alt="location"
-            />
+          </a>
+          <a href={`mailto:${blok.sales_email}`} className="flex gap-2">
+            <Image src="/icons/email.svg" width={15} height={15} alt="email" />
             <p className="text-16 w-full font-light text-black-1">
               Sales Service:{' '}
               <span
@@ -94,7 +85,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
                 {blok.sales_email}
               </span>
             </p>
-          </div>
+          </a>
         </div>
         <div className="flex w-full flex-col gap-5 border-b border-gray-1 py-5">
           <div className="flex gap-2">
