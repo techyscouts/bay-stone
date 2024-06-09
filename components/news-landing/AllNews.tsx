@@ -1,18 +1,24 @@
-import { getStoryblokApi, storyblokEditable } from '@storyblok/react';
+'use client';
+
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import NewsTeaserCard from './NewsTeaserCard';
+import { useEffect, useState } from 'react';
 
-const getArticles = async () => {
-  const storyblokApi = getStoryblokApi();
-  const { data } = await storyblokApi.get(`cdn/stories`, {
-    version: 'draft',
-    starts_with: 'news/',
-    is_startpage: false,
-  });
-  return data.stories;
-};
+const AllNews = ({ blok }: { blok: any }) => {
+  const [data, setData] = useState([]) as any;
+  const getArticles = async () => {
+    const storyblokApi = getStoryblokApi();
+    const { data } = await storyblokApi.get(`cdn/stories`, {
+      version: 'draft',
+      starts_with: 'news/',
+      is_startpage: false,
+    });
+    setData(data.stories);
+  };
 
-const AllNews = async ({ blok }: { blok: any }) => {
-  const data = await getArticles();
+  useEffect(() => {
+    getArticles();
+  }, []);
   return (
     <section
       className="flex size-full flex-col gap-10"

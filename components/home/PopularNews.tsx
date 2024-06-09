@@ -1,3 +1,4 @@
+'use client';
 import {
   ISbStoriesParams,
   getStoryblokApi,
@@ -7,6 +8,7 @@ import NewsTeaserCard from '../news-landing/NewsTeaserCard';
 import NewsCarousel from './NewsCarousel';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const sbParams: ISbStoriesParams = {
   version:
@@ -14,20 +16,23 @@ const sbParams: ISbStoriesParams = {
   resolve_relations: ['popular_news.news'],
 };
 
-async function getArticles() {
-  const storyblokApi = getStoryblokApi();
-  const data = await storyblokApi.get(`cdn/stories/home`, sbParams, {
-    cache: 'no-store',
-  });
-  return data.data.rels;
-}
+const PopularNews = ({ blok }: { blok: any }) => {
+  const [articles, setArticles] = useState([]) as any;
+  const getArticles = async function getArticles() {
+    const storyblokApi = getStoryblokApi();
+    const data = await storyblokApi.get(`cdn/stories/home`, sbParams, {
+      cache: 'no-store',
+    });
+    setArticles(data.data.rels);
+  };
 
-const PopularNews = async ({ blok }: { blok: any }) => {
-  const data = await getArticles();
+  useEffect(() => {
+    getArticles();
+  }, []);
   return (
     <section
       className="flex size-full flex-col gap-10"
-      {...storyblokEditable(data)}
+      {...storyblokEditable(articles)}
     >
       <div className="flex items-center justify-between">
         <h1
@@ -45,9 +50,9 @@ const PopularNews = async ({ blok }: { blok: any }) => {
       </div>
       <div
         className="grid size-full grid-cols-1 gap-10 max-xl:hidden xl:grid-cols-3"
-        {...storyblokEditable(data)}
+        {...storyblokEditable(articles)}
       >
-        {data.map((article: any) => (
+        {articles.map((article: any) => (
           <NewsTeaserCard
             key={article.id}
             blok={article.content}
@@ -55,8 +60,8 @@ const PopularNews = async ({ blok }: { blok: any }) => {
           />
         ))}
       </div>
-      <div {...storyblokEditable(data)} className="size-full">
-        <NewsCarousel blok={data} />
+      <div {...storyblokEditable(articles)} className="size-full">
+        <NewsCarousel blok={articles} />
       </div>
     </section>
   );
