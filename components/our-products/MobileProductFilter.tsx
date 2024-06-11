@@ -4,7 +4,6 @@ import { storyblokEditable } from '@storyblok/react';
 import SidebarCollapsible from './SidebarCollapsible';
 
 const MobileProductFilter = ({ data }: { data: any }) => {
-  console.log(data, 'mobile filter');
   return (
     <div className="w-full sm:hidden">
       <Sheet>
