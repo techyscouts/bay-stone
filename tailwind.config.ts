@@ -39,7 +39,7 @@ const config = {
         },
         blue: {
           1: '#1E708A',
-          main: '#13556A',
+          main: '#08222B',
         },
         gray: {
           light: '#F1F1F1',
