@@ -1,11 +1,11 @@
-import { fetchData } from '@/queries/storyblokQueries';
+import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import StoryblokStory from '@storyblok/react/story';
 
 const page = async () => {
-  const { data } = await fetchData('about-bay-stone');
+  const { story } = await fetchStoryBySlug('about-bay-stone');
   return (
     <main className="size-full font-urbane">
-      <StoryblokStory story={data.story} />
+      <StoryblokStory story={story} />
     </main>
   );
 };

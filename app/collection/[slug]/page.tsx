@@ -1,4 +1,4 @@
-import { fetchData } from '@/queries/storyblokQueries';
+import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import StoryblokStory from '@storyblok/react/story';
 
 const page = async ({
@@ -8,10 +8,10 @@ const page = async ({
     slug: string;
   };
 }) => {
-  const { data } = await fetchData(`collection/${params.slug}`);
+  const { story } = await fetchStoryBySlug(`collection/${params.slug}`);
   return (
     <main className="size-full font-urbane">
-      <StoryblokStory story={data.story} />
+      <StoryblokStory story={story} />
     </main>
   );
 };

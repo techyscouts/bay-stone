@@ -7,7 +7,7 @@ import { Zilla_Slab } from 'next/font/google';
 import './globals.css';
 import { Footer, Navbar } from '@/components/shared';
 import StoryblokPrivider from '@/providers/StoryblokProvider';
-import { fetchData } from '@/queries/storyblokQueries';
+import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import { components } from '@/components/components-list';
 
 storyblokInit({
@@ -40,10 +40,8 @@ export default async function RootLayout({
   children: ReactNode;
 }>) {
   const {
-    data: {
-      story: { content },
-    },
-  } = await fetchData('header-footer');
+    story: { content },
+  } = await fetchStoryBySlug('header-footer');
 
   return (
     <html lang="en">
