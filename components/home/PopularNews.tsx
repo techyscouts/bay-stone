@@ -18,7 +18,7 @@ const sbParams: ISbStoriesParams = {
 
 const PopularNews = ({ blok }: { blok: any }) => {
   const [articles, setArticles] = useState([]) as any;
-  const getArticles = async function getArticles() {
+  const getArticles = async () => {
     const storyblokApi = getStoryblokApi();
     const data = await storyblokApi.get(`cdn/stories/home`, sbParams, {
       cache: 'no-store',
