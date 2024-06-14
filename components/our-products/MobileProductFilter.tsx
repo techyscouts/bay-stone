@@ -24,9 +24,9 @@ const MobileProductFilter = ({ data }: { data: any }) => {
         >
           <div
             className="mt-4 flex w-full flex-col gap-1"
-            {...storyblokEditable(data.story)}
+            {...storyblokEditable(data.content)}
           >
-            {data.story.content.filter.map((blok: any) => (
+            {data.content.filter.map((blok: any) => (
               <SidebarCollapsible key={blok._uid} blok={blok} />
             ))}
           </div>

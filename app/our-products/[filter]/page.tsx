@@ -2,7 +2,7 @@
 import { GalleryItemModal } from '@/components/shared';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { fetchData } from '@/queries/storyblokQueries';
+import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
@@ -19,8 +19,8 @@ const page = async ({
   if (!searchParams.category) {
     redirect('/our-products');
   }
-  const { data } = await fetchData(`collection/${params.filter}`);
-  const titleBar = data.story.content.title_bar;
+  const { story } = await fetchStoryBySlug(`collection/${params.filter}`);
+  const titleBar = story.content.title_bar;
   return (
     <section className="flex w-full flex-col gap-[55px]">
       <header
@@ -56,7 +56,7 @@ const page = async ({
           'grid grid-cols-1 gap-x-8 gap-y-[55px] lg:grid-cols-2 xl:grid-cols-3'
         )}
       >
-        {data.story.content.image_gallery.map((image: any) => (
+        {story.content.image_gallery.map((image: any) => (
           <GalleryItemModal key={image.id} image={image} />
         ))}
       </section>
