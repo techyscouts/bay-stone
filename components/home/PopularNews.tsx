@@ -45,7 +45,7 @@ const PopularNews = ({ blok }: { blok: any }) => {
           asChild
           className="blue-main-bg w-full max-w-[212px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1"
         >
-          <Link href="/news-landing">See more news</Link>
+          <Link href="/news">See more news</Link>
         </Button>
       </div>
       <div

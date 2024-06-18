@@ -39,7 +39,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories`, {
       version: 'draft',
-      starts_with: 'news/',
+      starts_with: 'news-detail/',
       is_startpage: false,
     });
     const slugArray = data.stories.map((item: any) => item.name);
@@ -54,7 +54,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
     const currentIndex = articles.indexOf(slug as string);
     if (currentIndex < articles.length - 1) {
       const nextSlug = articles[currentIndex + 1];
-      router.push(`/news-landing/${nextSlug}`);
+      router.push(`/news/${nextSlug}`);
     }
   };
 
@@ -62,7 +62,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
     const currentIndex = articles.indexOf(slug as string);
     if (currentIndex > 0) {
       const previousSlug = articles[currentIndex - 1];
-      router.push(`/news-landing/${previousSlug}`);
+      router.push(`/news/${previousSlug}`);
     }
   };
 
@@ -78,7 +78,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
             asChild
             className="text-16 blue-main-bg px-10 py-2.5 font-semibold text-white-1"
           >
-            <Link href="/news-landing">Back</Link>
+            <Link href="/news">Back</Link>
           </Button>
         </header>
         <Image
