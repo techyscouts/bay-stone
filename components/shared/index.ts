@@ -9,6 +9,7 @@ import ProductCollections from './ProductCollections';
 import ProductCarousel from './Product-carousel/ProductCarousel';
 import GalleryItemModal from './GalleryItemModal';
 import NotFound from './NotFound';
+import SiteWide from './SiteWide';
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   ProductCarousel,
   GalleryItemModal,
   NotFound,
+  SiteWide,
 };
