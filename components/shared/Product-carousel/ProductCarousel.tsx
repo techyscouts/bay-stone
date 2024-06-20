@@ -58,21 +58,15 @@ const ProductCarousel = ({ blok }: { blok: any }) => {
           </div>
         ))}
       </div>
-      {/* <div className="flex-center bottom-[53px] left-[47%] flex gap-5 max-xl:py-10 xl:absolute">
-        {scrollSnaps.map((_, index) => (
-          <DotButton
-            key={index}
-            onClick={() => onDotButtonClick(index)}
-            selected={index === selectedIndex}
-          />
-        ))}
-      </div> */}
-      <div className="absolute left-0 top-1/3 w-full px-5 xl:top-1/2 xl:px-10">
-        <div className="flex w-full justify-between">
-          <PrevButton onClick={onPrevButtonClick} />
-          <NextButton onClick={onNextButtonClick} />
+
+      {blok.hero_carousel.length > 1 && (
+        <div className="absolute left-0 top-1/3 w-full px-5 xl:top-1/2 xl:px-10">
+          <div className="flex w-full justify-between">
+            <PrevButton onClick={onPrevButtonClick} />
+            <NextButton onClick={onNextButtonClick} />
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };

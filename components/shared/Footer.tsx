@@ -49,7 +49,7 @@ const Footer = ({
             {footerSubhead}
           </Link>
         </header>
-        <figure className="max-sm:wrapper mx-auto grid max-w-screen-2xl grid-cols-2 gap-9 pb-5 lg:grid-cols-4">
+        <figure className="wrapper mx-auto grid max-w-screen-2xl grid-cols-2 gap-9 pb-5 lg:grid-cols-4">
           {footerImages.map((image) => (
             <Image
               key={image.id}
