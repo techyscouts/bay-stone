@@ -19,9 +19,7 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
             <MobileProductFilter data={story} />
           </Suspense>
         </aside>
-        <main className="no-scrollbar size-full max-h-[1300px] overflow-y-scroll">
-          {children}
-        </main>
+        <main className="no-scrollbar size-full">{children}</main>
       </section>
     </div>
   );
