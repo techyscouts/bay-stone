@@ -120,7 +120,7 @@ const Navbar = ({
       </section>
       <nav
         className={cn(
-          'absolute top-[120px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden z-10 bg-white-1 nav-shadow',
+          'absolute top-[118px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden z-10 bg-white-1 nav-shadow',
           { 'translate-x-0': isMobileMenuOpen }
         )}
       >
