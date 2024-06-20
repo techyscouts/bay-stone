@@ -7,7 +7,8 @@ import { Button } from '../ui/button';
 
 const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
   return (
-    <div
+    <Link
+      href={`/news/${slug}`}
       className="search-boxShadow flex w-full flex-col rounded-lg font-urbane max-xl:flex-none"
       {...storyblokEditable(blok)}
     >
@@ -78,11 +79,11 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
             asChild
             className="blue-main-bg text-16 mt-5  px-10 py-2.5 font-semibold text-white-1"
           >
-            <Link href={`/news-landing/${slug}`}>Read More</Link>
+            <Link href={`/news/${slug}`}>Read More</Link>
           </Button>
         </div>
       </article>
-    </div>
+    </Link>
   );
 };
 

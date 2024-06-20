@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import useTapAway from '@/utils/useTapAway';
 import { navItem } from '@/types';
 import { Hamburger } from './small';
 import { cn } from '@/lib/utils';
-import { DesktopMenuItem, MobileMenuItem } from '.';
+import { DesktopMenuItem, MobileMenuItem, SiteWide } from '.';
 import { useRouter } from 'next/navigation';
 
 interface NavbarProps {
@@ -32,34 +32,19 @@ const Navbar = ({
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   useTapAway({ ref: searchRef, handler: () => setIsSearchOpen(false) });
-  const titleArray = header.map((item: any) => item.title);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % titleArray.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [titleArray.length]);
 
   return (
     <header className="flex flex-col">
-      <div className="flex h-[46px] items-center justify-center bg-black-1 ">
-        <h1 className="text-14 md:text-16 text-center font-urbane  font-semibold text-white-2">
-          {titleArray[currentIndex]}
-        </h1>
-      </div>
+      <SiteWide header={header} />
       <section className="wrapper flex flex-col bg-white-1 py-2.5 max-sm:pb-2">
-        <nav className="flex items-center justify-between  py-2.5">
+        <nav className="flex items-center justify-between gap-3 py-2.5">
           <div className="xl:hidden">
             <Hamburger
               isOpen={isMobileMenuOpen}
               setIsOpen={setIsMobileMenuOpen}
             />
           </div>
-          <div className="flex w-full max-w-[800px] items-center gap-5 max-xl:justify-center">
+          <div className="flex w-full max-w-[800px] items-center gap-11 max-xl:justify-center">
             <Link
               href="/"
               className="relative h-7 w-[197px] md:h-9 xl:h-11 xl:w-[234px]"
@@ -135,7 +120,7 @@ const Navbar = ({
       </section>
       <nav
         className={cn(
-          'absolute top-[120px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden z-10 bg-white-1 nav-shadow',
+          'absolute top-[118px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden z-10 bg-white-1 nav-shadow',
           { 'translate-x-0': isMobileMenuOpen }
         )}
       >

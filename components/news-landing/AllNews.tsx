@@ -10,7 +10,7 @@ const AllNews = ({ blok }: { blok: any }) => {
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories`, {
       version: 'draft',
-      starts_with: 'news/',
+      starts_with: 'news-detail/',
       is_startpage: false,
     });
     setData(data.stories);

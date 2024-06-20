@@ -2,7 +2,7 @@ import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import StoryblokStory from '@storyblok/react/story';
 
 const page = async () => {
-  const { story } = await fetchStoryBySlug('news-landing');
+  const { story } = await fetchStoryBySlug('news');
   return (
     <main className="size-full font-urbane">
       <StoryblokStory story={story} />
