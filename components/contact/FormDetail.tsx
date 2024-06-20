@@ -101,7 +101,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                       <FormControl>
                         <Input
                           placeholder="Email*"
-                          className="w-full rounded-none border-2 border-blue-main bg-white-1 text-black-1 placeholder:text-black-1 focus-visible:ring-0"
+                          className="w-full rounded-none border-2 border-blue-main bg-white-1 font-light text-black-1 placeholder:text-black-1 focus-visible:ring-0"
                           {...field}
                         />
                       </FormControl>
@@ -120,7 +120,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                     <FormControl>
                       <Textarea
                         placeholder="Message*"
-                        className="w-full rounded-none border-2 border-blue-main bg-white-1 text-black-1 placeholder:text-black-1 focus-visible:ring-0 "
+                        className="w-full rounded-none border-2 border-blue-main bg-white-1 font-light text-black-1 placeholder:text-black-1 focus-visible:ring-0 "
                         rows={6}
                         {...field}
                       />
