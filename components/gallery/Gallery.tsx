@@ -1,4 +1,6 @@
-import { StoryblokComponent, storyblokEditable } from '@storyblok/react/rsc';
+'use client';
+
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 
 const Gallery = ({ blok }: { blok: any }) => {
   return (

@@ -1,14 +1,18 @@
-import { storyblokEditable } from '@storyblok/react/rsc';
+'use client';
+
+import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import formatDate from '@/utils/dateFormatter';
 import { Button } from '../ui/button';
+import { useRouter } from 'next/navigation';
 
 const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
+  const router = useRouter();
   return (
-    <Link
-      href={`/news/${slug}`}
+    <div
+      onClick={() => router.push(`/news/${slug}`)}
       className="search-boxShadow flex w-full flex-col rounded-lg font-urbane max-xl:flex-none"
       {...storyblokEditable(blok)}
     >
@@ -83,7 +87,7 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
           </Button>
         </div>
       </article>
-    </Link>
+    </div>
   );
 };
 
