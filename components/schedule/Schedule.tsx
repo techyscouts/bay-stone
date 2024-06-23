@@ -1,5 +1,7 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react/rsc';
 import ScheduleForm from './ScheduleForm';
+import { scheduleBrings } from '@/constants';
+import Image from 'next/image';
 
 const Schedule = ({ blok }: { blok: any }) => {
   return (
@@ -25,8 +27,22 @@ const Schedule = ({ blok }: { blok: any }) => {
           {blok.service_header}
         </h1>
         <div className="flex w-full flex-col gap-[55px] px-[55px] md:flex-row">
-          {blok.services.map((service: any) => (
-            <StoryblokComponent key={service._uid} blok={service} />
+          {scheduleBrings.map((item) => (
+            <figure
+              key={item.id}
+              className="flex  w-full max-w-[387px] flex-col items-center gap-2"
+            >
+              <Image
+                src={item.icon}
+                alt="service image"
+                width={100}
+                height={100}
+                quality={100}
+              />
+              <p className="text-16 text-center font-light text-black-1">
+                {item.description}
+              </p>
+            </figure>
           ))}
         </div>
       </div>

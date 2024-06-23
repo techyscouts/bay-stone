@@ -40,3 +40,22 @@ export const socialLinks = [
     icon: '/icons/houzz.svg',
   },
 ];
+
+export const scheduleBrings = [
+  {
+    id: 1,
+    description: 'A project plan or a drawing that includes measurements',
+    icon: '/icons/schedule/measure.svg',
+  },
+  {
+    id: 2,
+    description: 'An idea of the ideal financial budget for your home project',
+    icon: '/icons/schedule/dollar-circle.svg',
+  },
+  {
+    id: 1,
+    description:
+      'Potential colors and/or styles that interest you, i.e., traditional, modern, contemporary, etc.',
+    icon: '/icons/schedule/styles.svg',
+  },
+];

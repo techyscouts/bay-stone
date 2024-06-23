@@ -33,13 +33,21 @@ const HeroSchedule = ({ blok }: { blok: any }) => {
             height={15}
             alt="location"
           />
-          <a
-            href={`tel:${blok.location}`}
-            className="text-16 font-light text-black-1"
-            {...storyblokEditable(blok)}
-          >
-            {blok.location}
-          </a>
+          <article className="flex">
+            <p
+              // href={`tel:${blok.location}`}
+              className="text-16 font-light text-black-1"
+              {...storyblokEditable(blok)}
+            >
+              {blok.location} &nbsp;
+            </p>
+            <a
+              href={`tel:${blok.phone}`}
+              className="text-16 font-light text-blue-main"
+            >
+              {blok.phone}
+            </a>
+          </article>
         </div>
       </article>
       <Image

@@ -20,7 +20,7 @@ const Newsletter = ({
       }}
     >
       <div className="flex w-full flex-col justify-center gap-3 xl:max-w-[577px]">
-        <h1 className="text-20 xl:text-32 text-black-2  max-xl:text-center">
+        <h1 className="text-20 xl:text-32 text-[#08222b]  max-xl:text-center">
           {title}
         </h1>
         <p className="text-20 xl:text-24 font-light text-black-1 max-xl:text-center">

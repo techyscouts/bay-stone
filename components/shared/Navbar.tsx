@@ -44,7 +44,7 @@ const Navbar = ({
               setIsOpen={setIsMobileMenuOpen}
             />
           </div>
-          <div className="flex w-full max-w-[800px] items-center gap-11 max-xl:justify-center">
+          <div className="flex  items-center gap-11 max-xl:justify-center">
             <Link
               href="/"
               className="relative h-7 w-[197px] md:h-9 xl:h-11 xl:w-[234px]"
@@ -57,8 +57,8 @@ const Navbar = ({
                 className="object-contain"
               />
             </Link>
-            <DesktopMenuItem navItems={navItems} />
           </div>
+          <DesktopMenuItem navItems={navItems} />
           <div className="relative flex gap-4">
             <Button
               className="blue-main-bg hidden font-urbane text-sm font-semibold text-white-1 xl:block xl:text-base"
