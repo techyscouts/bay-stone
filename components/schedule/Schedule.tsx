@@ -21,7 +21,7 @@ const Schedule = ({ blok }: { blok: any }) => {
         {...storyblokEditable(blok)}
       >
         <h1
-          className="text-32 xl:text-48 text-center font-medium text-blue-main"
+          className="text-3xl xl:text-5xl text-center font-medium text-blue-main"
           {...storyblokEditable(blok)}
         >
           {blok.service_header}
@@ -39,7 +39,7 @@ const Schedule = ({ blok }: { blok: any }) => {
                 height={100}
                 quality={100}
               />
-              <p className="text-16 text-center font-light text-black-1">
+              <p className="text-base leading-6 text-center font-light text-black-1">
                 {item.description}
               </p>
             </figure>

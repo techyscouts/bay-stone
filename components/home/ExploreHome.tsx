@@ -20,13 +20,13 @@ const ExploreHome = ({ blok }: { blok: any }) => {
         {...storyblokEditable(blok)}
       >
         <p
-          className="text-24 xl:text-32 font-light text-white-1"
+          className="text-2xl font-light text-white-1 xl:text-3xl"
           {...storyblokEditable(blok)}
         >
           {blok.subHeader}
         </p>
         <h1
-          className="text-32 xl:text-48 font-medium text-white-1 max-xl:text-center"
+          className="text-3xl font-medium text-white-1 max-xl:text-center xl:text-5xl"
           {...storyblokEditable(blok)}
         >
           {blok.header}
@@ -34,7 +34,7 @@ const ExploreHome = ({ blok }: { blok: any }) => {
         <div className="pt-10">
           <Button
             asChild
-            className="text-16 blue-main-bg px-10 py-2.5 font-semibold text-white-1"
+            className="blue-main-bg px-10 py-2.5 text-base font-semibold leading-6 text-white-1"
           >
             <Link href={blok.button_link.cached_url}>{blok.button_text}</Link>
           </Button>
@@ -54,7 +54,7 @@ const ExploreHome = ({ blok }: { blok: any }) => {
               {...storyblokEditable(blok)}
             />
             <figcaption
-              className="text-16 2xl:text-24 font-light text-black-1"
+              className="text-base font-light text-black-1 2xl:text-2xl"
               {...storyblokEditable(blok)}
             >
               {image.title}

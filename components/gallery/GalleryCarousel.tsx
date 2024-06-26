@@ -41,13 +41,13 @@ const GalleryCarousel = ({ blok }: { blok: any }) => {
   return (
     <section className="flex flex-col" {...storyblokEditable(blok)}>
       <h1
-        className="text-32 xl:text-48 text-center font-medium text-blue-main"
+        className="text-center text-3xl font-medium text-blue-main xl:text-5xl"
         {...storyblokEditable(blok)}
       >
         {blok.header}
       </h1>
       <p
-        className="text-16 pb-10 pt-5 text-center font-light text-black-1"
+        className="pb-10 pt-5 text-center text-base font-light leading-6 text-black-1"
         {...storyblokEditable(blok)}
       >
         {blok.description}

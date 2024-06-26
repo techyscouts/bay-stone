@@ -18,6 +18,7 @@ import {
 import { AllNews, NewsDetail, NewsLanding } from './news-landing';
 import { PrivacyPolicy } from './privacy-policy';
 import TermsAndConditions from './terms-conditions/TermsAndConditions';
+import { Search } from './search';
 import { HeroSchedule, Schedule, ServiceSchedule } from './schedule';
 import { Gallery, GalleryCarousel } from './gallery';
 import { OurProduct } from './our-products';
@@ -62,4 +63,5 @@ export const components = {
   contact: Contact,
   location_details: LocationDetails,
   form_detail: FormDetail,
+  search: Search,
 };

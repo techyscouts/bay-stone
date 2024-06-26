@@ -8,20 +8,20 @@ const HeroSchedule = ({ blok }: { blok: any }) => {
       <article className="flex w-full flex-col gap-10 xl:max-w-[670px] 2xl:max-w-[710px]">
         <div className="flex flex-col gap-3">
           <h1
-            className="text-32 text-48 text-center font-medium text-blue-main"
+            className="text-center text-3xl font-medium text-blue-main xl:text-5xl"
             {...storyblokEditable(blok)}
           >
             {blok.title}
           </h1>
           <p
-            className="text-24 xl:text-32 text-center font-light text-blue-main"
+            className="text-center text-2xl font-light text-blue-main xl:text-3xl"
             {...storyblokEditable(blok)}
           >
             {blok.subdescription}
           </p>
         </div>
         <div
-          className="text-16 text-center font-light text-black-1"
+          className="text-center text-base font-light leading-6 text-black-1"
           {...storyblokEditable(blok)}
         >
           {render(blok.description)}
@@ -36,14 +36,14 @@ const HeroSchedule = ({ blok }: { blok: any }) => {
           <article className="flex">
             <p
               // href={`tel:${blok.location}`}
-              className="text-16 font-light text-black-1"
+              className="text-base font-light leading-6 text-black-1"
               {...storyblokEditable(blok)}
             >
               {blok.location} &nbsp;
             </p>
             <a
               href={`tel:${blok.phone}`}
-              className="text-16 font-light text-blue-main"
+              className="text-base font-light leading-6 text-blue-main"
             >
               {blok.phone}
             </a>

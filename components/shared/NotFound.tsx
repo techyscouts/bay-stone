@@ -16,13 +16,13 @@ const NotFound = ({ blok }: { blok: any }) => {
       />
       <article className="flex flex-col items-center gap-1">
         <h2
-          className="text-20 xl:text-32 font-light text-blue-main"
+          className="text-xl font-light text-blue-main xl:text-3xl"
           {...storyblokEditable(blok)}
         >
           {blok.subheader}
         </h2>
         <h1
-          className="text-32 xl:text-48 font-medium text-blue-main"
+          className="text-3xl font-medium text-blue-main xl:text-5xl"
           {...storyblokEditable(blok)}
         >
           {blok.header}

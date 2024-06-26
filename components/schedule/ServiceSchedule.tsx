@@ -14,7 +14,7 @@ const ServiceSchedule = ({ blok }: { blok: any }) => {
         height={100}
         quality={100}
       />
-      <p className="text-16 text-center font-light text-black-1">
+      <p className="text-base leading-6 text-center font-light text-black-1">
         {blok.teaser}
       </p>
     </figure>

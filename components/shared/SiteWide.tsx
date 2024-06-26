@@ -17,7 +17,7 @@ const SiteWide = ({ header }: { header: any }) => {
           {header.map((header: any) => (
             <h1
               key={header._uid}
-              className="text-14 md:text-16 w-full flex-none text-center font-urbane  font-semibold text-white-2"
+              className="w-full flex-none text-center font-urbane text-sm font-semibold leading-6  text-white-2 md:text-base"
             >
               {header.title}
             </h1>

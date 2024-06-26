@@ -10,7 +10,7 @@ const AllNews = ({ blok }: { blok: any }) => {
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories`, {
       version: 'draft',
-      starts_with: 'news-detail/',
+      starts_with: 'news/',
       is_startpage: false,
     });
     setData(data.stories);
@@ -25,7 +25,7 @@ const AllNews = ({ blok }: { blok: any }) => {
       {...storyblokEditable(data)}
     >
       <h1
-        className="text-32 xl:text-48 font-medium text-blue-main"
+        className="text-3xl xl:text-5xl font-medium text-blue-main"
         {...storyblokEditable(blok)}
       >
         {blok.headline}

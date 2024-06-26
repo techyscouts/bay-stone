@@ -12,7 +12,7 @@ const MobileMenuItem = ({
   return (
     <menu
       className={
-        ' text-16 flex w-full flex-col items-start gap-6 whitespace-nowrap bg-white-1 font-zillaSlab font-semibold uppercase text-black-1 md:pl-[50px] xl:hidden '
+        ' flex w-full flex-col items-start gap-2 whitespace-nowrap bg-white-1 font-zillaSlab text-base font-semibold uppercase leading-6 text-black-1 md:pl-8 xl:hidden '
       }
     >
       {navItems.map((item) => (

@@ -15,7 +15,7 @@ const TestimonialBlock = ({ blok }: { blok: any }) => {
         />
       </div>
       <div
-        className="text-16 h-fit  py-2.5 font-urbane font-light text-black-1"
+        className="h-fit py-2.5 font-urbane  text-base font-light leading-6 text-black-1"
         {...storyblokEditable(blok)}
       >
         {render(blok.testimonial_message)}
@@ -28,7 +28,9 @@ const TestimonialBlock = ({ blok }: { blok: any }) => {
           height={32}
         />
       </div>
-      <h1 className="text-24 mt-5 font-medium text-blue-main">{blok.client}</h1>
+      <h1 className="mt-5 text-2xl font-medium text-blue-main">
+        {blok.client}
+      </h1>
     </div>
   );
 };

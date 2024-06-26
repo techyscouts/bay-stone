@@ -23,7 +23,7 @@ const ProductCollections = ({ blok }: { blok: any }) => {
           <ProductCarousel blok={blok} />
         </div>
         <div
-          className="text-16 mx-auto w-full text-center font-light text-black-1 lg:w-[90%]"
+          className="mx-auto w-full text-center text-base font-light leading-6 text-black-1 lg:w-[90%]"
           {...storyblokEditable(blok)}
         >
           {render(blok.description)}
@@ -44,7 +44,7 @@ const ProductCollections = ({ blok }: { blok: any }) => {
         {length > imageCount && length >= 16 && length !== imageCount && (
           <div className="flex-center pt-5 xl:pt-10">
             <Button
-              className="text-16 px-10 py-2.5 font-semibold text-white-1"
+              className="px-10 py-2.5 text-base font-semibold leading-6 text-white-1"
               onClick={() => setImageCount(length)}
             >
               Load More

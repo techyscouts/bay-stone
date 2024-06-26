@@ -6,18 +6,17 @@ import Link from 'next/link';
 
 import formatDate from '@/utils/dateFormatter';
 import { Button } from '../ui/button';
-import { useRouter } from 'next/navigation';
+import { decodeHtmlEntities } from '@/utils/decodeHtmlEntities';
+import { truncateString } from '@/utils/truncateString';
 
 const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
-  const router = useRouter();
   return (
     <div
-      onClick={() => router.push(`/news/${slug}`)}
       className="search-boxShadow flex w-full flex-col rounded-lg font-urbane max-xl:flex-none"
       {...storyblokEditable(blok)}
     >
       <header
-        className="relative flex flex-col overflow-hidden rounded-t-lg pb-[30px] pl-[30px] pt-[118px] xl:pt-[200px]"
+        className="relative flex aspect-[10/7] flex-col overflow-hidden rounded-t-lg"
         style={{
           backgroundImage: `url(${blok.image.filename})`,
           backgroundSize: 'cover',
@@ -25,63 +24,80 @@ const NewsTeaserCard = ({ blok, slug }: { blok: any; slug: string }) => {
         }}
         {...storyblokEditable(blok)}
       >
-        <h2
-          className="text-32 z-10 font-semibold text-white-1"
-          {...storyblokEditable(blok)}
-        >
-          {blok.title}
-        </h2>
-        <figure className="z-10 flex gap-2.5">
-          <Image
-            src="/icons/author-icon.svg"
-            width={24}
-            height={24}
-            alt="author icon"
-          />
-          <p
-            className="text-20 font-normal text-white-1"
+        <div className="news-bg-shadow absolute left-0 top-0 size-full" />
+        <div className="absolute inset-x-5 bottom-5">
+          <h2
+            className="z-10 text-3xl font-semibold text-white-1"
             {...storyblokEditable(blok)}
           >
-            {blok.author}
-          </p>
-        </figure>
-        <div className="news-bg-shadow absolute left-0 top-0 size-full" />
+            {blok.title}
+          </h2>
+          {blok.author && (
+            <figure className="z-10 flex gap-2.5">
+              <Image
+                src="/icons/author-icon.svg"
+                width={24}
+                height={24}
+                alt="author icon"
+              />
+              <p
+                className="text-xl font-normal text-white-1"
+                {...storyblokEditable(blok)}
+              >
+                {blok.author}
+              </p>
+            </figure>
+          )}
+        </div>
       </header>
       <article className="flex flex-col p-5">
         <div className="flex justify-between">
-          <figure className="flex items-center gap-2">
-            <Image
-              src="/icons/calendar.svg"
-              width={24}
-              height={24}
-              alt="calendar icon"
-            />
-            <p
-              className="text-14 2xl:text-20 font-light text-black-1"
-              {...storyblokEditable(blok)}
-            >
-              {formatDate(blok.date)}
-            </p>
-          </figure>
-          <figure className="flex items-center gap-2">
-            <Image
-              src="/icons/categories.svg"
-              width={24}
-              height={24}
-              alt="calendar icon"
-            />
-            <p className="text-14 2xl:text-20 font-light text-black-1">
-              categories
-            </p>
-          </figure>
+          {blok.date && (
+            <figure className="flex items-center gap-2">
+              <Image
+                src="/icons/calendar.svg"
+                width={24}
+                height={24}
+                alt="calendar icon"
+              />
+              <p
+                className="text-sm font-light leading-6 text-black-1 2xl:text-xl"
+                {...storyblokEditable(blok)}
+              >
+                {formatDate(blok.date)}
+              </p>
+            </figure>
+          )}
+          {blok.category && (
+            <figure className="flex items-center gap-2">
+              <Image
+                src="/icons/categories.svg"
+                width={24}
+                height={24}
+                alt="calendar icon"
+              />
+              <p
+                className="text-sm font-light leading-6 text-black-1 2xl:text-xl"
+                {...storyblokEditable(blok)}
+              >
+                categories
+              </p>
+            </figure>
+          )}
         </div>
-        <p className="text-16 py-5 font-light" {...storyblokEditable(blok)}>
-          {blok.teaser}
+        <p
+          className="py-5 text-base font-light leading-6"
+          {...storyblokEditable(blok)}
+        >
+          {truncateString(
+            decodeHtmlEntities(blok.teaser.replace(/<[^>]*>?/gm, '')),
+            400
+          )}
         </p>
         <div className="max-xl:flex-center xl:max-w-[172px]">
           <Button
             asChild
-            className="blue-main-bg text-16 mt-5  px-10 py-2.5 font-semibold text-white-1"
+            className="blue-main-bg mt-5 px-10 py-2.5  text-base font-semibold leading-6 text-white-1"
           >
             <Link href={`/news/${slug}`}>Read More</Link>
           </Button>

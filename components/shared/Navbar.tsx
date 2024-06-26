@@ -3,14 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-import { useRef, useState } from 'react';
-import useTapAway from '@/utils/useTapAway';
+import { useEffect, useRef, useState } from 'react';
+import { useScrollLock } from 'usehooks-ts';
 import { navItem } from '@/types';
 import { Hamburger } from './small';
 import { cn } from '@/lib/utils';
 import { DesktopMenuItem, MobileMenuItem, SiteWide } from '.';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import Search from './Search';
 
 interface NavbarProps {
   logo: string;
@@ -27,11 +27,43 @@ const Navbar = ({
   buttonName,
   mobileButtonNumber,
 }: NavbarProps) => {
+  const mobileNav = useRef(null);
+  const { lock, unlock } = useScrollLock({
+    autoLock: false,
+    lockTarget: 'body',
+  });
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  useTapAway({ ref: searchRef, handler: () => setIsSearchOpen(false) });
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    unlock();
+  }, [pathname, searchParams]);
+
+  const openMobileMenu = () => {
+    document.body.classList.add('relative');
+    lock();
+    setIsMobileMenuOpen(true);
+    closeSearchBar();
+  };
+
+  const closeMobileMenu = () => {
+    document.body.classList.remove('relative');
+    unlock();
+    setIsMobileMenuOpen(false);
+  };
+
+  const openSearchBar = () => {
+    setIsSearchOpen(true);
+    closeMobileMenu();
+  };
+
+  const closeSearchBar = () => {
+    setIsSearchOpen(false);
+  };
 
   return (
     <header className="flex flex-col">
@@ -41,7 +73,8 @@ const Navbar = ({
           <div className="xl:hidden">
             <Hamburger
               isOpen={isMobileMenuOpen}
-              setIsOpen={setIsMobileMenuOpen}
+              openMenu={openMobileMenu}
+              closeMenu={closeMobileMenu}
             />
           </div>
           <div className="flex  items-center gap-11 max-xl:justify-center">
@@ -83,70 +116,52 @@ const Navbar = ({
                 alt="Search Icon"
                 width={24}
                 height={24}
-                onClick={() => setIsSearchOpen((prev) => !prev)}
+                onClick={openSearchBar}
                 className="cursor-pointer object-contain"
               />
               {isSearchOpen && (
                 <div ref={searchRef} className="relative max-sm:hidden">
-                  <div className="search-boxShadow absolute right-0 top-8 z-10 flex flex-col rounded-lg bg-white-1 p-2.5">
-                    <div className="triangle absolute -top-3 right-1 size-4 bg-white-1" />
-                    <Image
-                      src="/icons/search.svg"
-                      alt="Search Icon"
-                      width={24}
-                      height={24}
-                      className="absolute left-2 top-4"
-                    />
-                    <div className="border-b-2 border-black-1">
-                      <Input
-                        className="placeholder:text-16 text-16 w-[321px] border-none bg-transparent pl-8 font-urbane text-black-1 placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0"
-                        placeholder="Search.."
-                      />
-                    </div>
-                  </div>
+                  <Search onCloseSearch={closeSearchBar} />
                 </div>
               )}
             </div>
           </div>
         </nav>
         {isSearchOpen && (
-          <div className="border-b-2 border-black-1 sm:hidden">
-            <Input
-              className="placeholder:text-16 text-16 w-full border-none bg-transparent pl-0 font-urbane text-black-1 placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0"
-              placeholder="Search.."
-            />
+          <div className="absolute inset-x-0 top-[118px] z-20 block bg-white-1 px-4 pb-2 sm:hidden">
+            <Search onCloseSearch={closeSearchBar} />
           </div>
         )}
       </section>
       <nav
+        ref={mobileNav}
         className={cn(
-          'absolute top-[118px] translate-x-[-100%] w-full max-w-[600px] transition-all duration-700 flex flex-col pr-4 xl:hidden z-10 bg-white-1 nav-shadow',
+          'mobile-nav absolute top-[118px] bottom-0 translate-x-[-100%] w-full max-w-[450px] transition-all duration-700 flex flex-col xl:hidden z-10 bg-white-1 nav-shadow py-2',
           { 'translate-x-0': isMobileMenuOpen }
         )}
       >
-        <MobileMenuItem
-          navItems={navItems}
-          menuClose={() => setIsMobileMenuOpen(false)}
-        />
-        <div className="w-full py-5 pl-6 md:pl-[50px]">
-          <Button className="blue-main-bg w-full max-w-[297px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1">
-            <a href={`tel:${mobileButtonNumber}`} className="flex-center">
-              <Image
-                src="/icons/call.svg"
-                alt="Call Icon"
-                width={24}
-                height={24}
-                className="object-contain invert"
-              />
-              &nbsp;&nbsp;&nbsp;
-              {mobileButtonNumber}
-            </a>
-          </Button>
-        </div>
-        <div className="w-full pb-5 pl-6 md:pl-[50px]">
-          <Button className="w-full max-w-[297px] border  border-blue-main bg-transparent py-2.5 font-urbane text-base font-semibold text-blue-main">
-            {buttonName}
-          </Button>
+        <MobileMenuItem navItems={navItems} menuClose={closeMobileMenu} />
+        <div className="flex flex-col gap-4 bg-white-1 py-6">
+          <div className="flex w-full flex-row items-center justify-center">
+            <Button className="blue-main-bg w-full max-w-[297px] px-10 py-2.5 font-urbane text-base font-semibold text-white-1">
+              <a href={`tel:${mobileButtonNumber}`} className="flex-center">
+                <Image
+                  src="/icons/call.svg"
+                  alt="Call Icon"
+                  width={24}
+                  height={24}
+                  className="object-contain invert"
+                />
+                &nbsp;&nbsp;&nbsp;
+                {mobileButtonNumber}
+              </a>
+            </Button>
+          </div>
+          <div className="flex w-full flex-row items-center justify-center">
+            <Button className="w-full max-w-[297px] border  border-blue-main bg-transparent py-2.5 font-urbane text-base font-semibold text-blue-main">
+              {buttonName}
+            </Button>
+          </div>
         </div>
       </nav>
     </header>

@@ -22,7 +22,7 @@ const NewsCard = ({ blok }: { blok: any }) => {
         {...storyblokEditable(blok)}
       >
         <h2
-          className="text-32 font-semibold text-white-1"
+          className="text-3xl font-semibold text-white-1"
           {...storyblokEditable(blok)}
         >
           {blok.title}
@@ -35,7 +35,7 @@ const NewsCard = ({ blok }: { blok: any }) => {
             alt="author icon"
           />
           <p
-            className="text-20 font-normal text-white-1"
+            className="text-xl font-normal text-white-1"
             {...storyblokEditable(blok)}
           >
             {blok.author}
@@ -52,7 +52,7 @@ const NewsCard = ({ blok }: { blok: any }) => {
               alt="calendar icon"
             />
             <p
-              className="text-14 2xl:text-20 font-light text-black-1"
+              className="text-sm font-light leading-6 text-black-1 2xl:text-xl"
               {...storyblokEditable(blok)}
             >
               {formatDate(blok.post_createdAt)}
@@ -65,18 +65,21 @@ const NewsCard = ({ blok }: { blok: any }) => {
               height={24}
               alt="calendar icon"
             />
-            <p className="text-14 2xl:text-20 font-light text-black-1">
+            <p className="text-sm font-light leading-6 text-black-1 2xl:text-xl">
               categories
             </p>
           </figure>
         </div>
-        <div className="text-16 py-5 font-light" {...storyblokEditable(blok)}>
+        <div
+          className="py-5 text-base font-light leading-6"
+          {...storyblokEditable(blok)}
+        >
           {render(blok.description)}
         </div>
         <div className="max-xl:flex-center xl:max-w-[172px]">
           <Button
             asChild
-            className="blue-main-bg text-16 mt-5  px-10 py-2.5 font-semibold text-white-1"
+            className="blue-main-bg mt-5 px-10 py-2.5  text-base font-semibold leading-6 text-white-1"
           >
             <Link href="/news">Read More</Link>
           </Button>
