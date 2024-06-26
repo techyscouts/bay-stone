@@ -158,7 +158,12 @@ const Navbar = ({
             </Button>
           </div>
           <div className="flex w-full flex-row items-center justify-center">
-            <Button className="w-full max-w-[297px] border  border-blue-main bg-transparent py-2.5 font-urbane text-base font-semibold text-blue-main">
+            <Button
+              className="w-full max-w-[297px] border  border-blue-main bg-transparent py-2.5 font-urbane text-base font-semibold text-blue-main"
+              onClick={() => {
+                router.push('/schedule-appointment');
+              }}
+            >
               {buttonName}
             </Button>
           </div>
