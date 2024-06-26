@@ -30,13 +30,13 @@ const HeroCarousel = ({ blok }: { blok: any }) => {
         <div className="wrapper flex w-full flex-col gap-10 max-xl:items-center">
           <div className="flex flex-col gap-3">
             <p
-              className="text-24 xl:text-32 font-light max-xl:text-center"
+              className="text-2xl font-light max-xl:text-center xl:text-3xl"
               {...storyblokEditable(blok)}
             >
               {blok.subHeader}
             </p>
             <h1
-              className="text-48 xl:text-64 font-medium max-xl:text-center"
+              className="text-5xl font-medium max-xl:text-center xl:text-6xl"
               {...storyblokEditable(blok)}
             >
               {blok.header}
@@ -44,7 +44,7 @@ const HeroCarousel = ({ blok }: { blok: any }) => {
           </div>
           <Button
             asChild
-            className="blue-main-bg text-16 max-w-[240px] rounded-lg px-10 py-2.5 font-semibold transition-all duration-300 hover:bg-black-2"
+            className="blue-main-bg max-w-[240px] rounded-lg px-10 py-2.5 text-base font-semibold transition-all duration-300 hover:bg-black-2"
           >
             <Link
               href={blok.button_link.cached_url}

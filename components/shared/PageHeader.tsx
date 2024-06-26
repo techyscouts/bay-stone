@@ -16,7 +16,7 @@ const PageHeader = ({ blok }: { blok: any }) => {
       <article className={'hero-linear flex h-[157px] w-full items-center'}>
         <div className="wrapper">
           <div
-            className="text-32 md:text-48 2xl:text-64 w-full font-medium text-white-1"
+            className="w-full text-3xl font-medium text-white-1 md:text-5xl 2xl:text-6xl"
             {...storyblokEditable(blok)}
           >
             {render(blok.title)}

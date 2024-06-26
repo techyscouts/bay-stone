@@ -29,7 +29,7 @@ const SidebarCollapsible = ({ blok }: { blok: any }) => {
       <CollapsibleTrigger className="w-full bg-gray-light px-2.5 py-5">
         <div className="flex w-full justify-between">
           <h1
-            className="text-16 font-semibold text-black-1"
+            className="text-base font-semibold text-black-1"
             {...storyblokEditable(blok)}
           >
             {blok.filter_category}

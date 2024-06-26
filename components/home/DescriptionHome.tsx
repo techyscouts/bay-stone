@@ -18,20 +18,20 @@ const DescriptionHome = ({ blok }: { blok: any }) => {
         <article className="flex w-full max-w-[928px] flex-col items-center gap-10 rounded-lg bg-white-3 p-5 font-urbane text-blue-main lg:px-[60px] lg:py-10">
           <div className="flex flex-col items-center gap-3 text-center">
             <p
-              className="text-24 xl:text-32 font-light"
+              className="text-2xl font-light xl:text-3xl"
               {...storyblokEditable(blok)}
             >
               {blok.subHeader}
             </p>
             <h1
-              className="text-32 xl:text-48 font-medium"
+              className="text-3xl font-medium xl:text-5xl"
               {...storyblokEditable(blok)}
             >
               {blok.header}
             </h1>
           </div>
           <div
-            className="text-16 text-center font-light text-black-1"
+            className="text-center text-base font-light leading-6 text-black-1"
             {...storyblokEditable(blok)}
           >
             {render(blok.description)}
@@ -39,7 +39,7 @@ const DescriptionHome = ({ blok }: { blok: any }) => {
           {blok.button_title && (
             <Button
               asChild
-              className="text-16 px-10 py-2.5 font-semibold text-white-1"
+              className="px-10 py-2.5 text-base font-semibold leading-6 text-white-1"
               {...storyblokEditable(blok)}
             >
               <Link href={`${blok.button_link.cached_url}`}>

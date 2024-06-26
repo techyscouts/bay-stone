@@ -22,7 +22,7 @@ const IconAndDetail = ({
     <figure className="flex gap-2.5" {...storyblokEditable(blok)}>
       <Image src={icon} width={24} height={24} alt="icon" />
       <p
-        className="text-16 lg:text-20 font-light text-black-1"
+        className="text-base font-light leading-6 text-black-1 lg:text-xl"
         {...storyblokEditable(blok)}
       >
         {detail}
@@ -76,7 +76,7 @@ const NewsDetail = ({ blok }: { blok: any }) => {
         <header className="flex w-full justify-end">
           <Button
             asChild
-            className="text-16 blue-main-bg px-10 py-2.5 font-semibold text-white-1"
+            className="blue-main-bg px-10 py-2.5 text-base font-semibold leading-6 text-white-1"
           >
             <Link href="/news">Back</Link>
           </Button>
@@ -90,38 +90,44 @@ const NewsDetail = ({ blok }: { blok: any }) => {
         />
         <article className="flex flex-col gap-5">
           <h1
-            className="text-32 xl:text-48 text-center font-medium text-blue-main"
+            className="text-center text-3xl font-medium text-blue-main xl:text-5xl"
             {...storyblokEditable(blok)}
           >
             {blok.title}
           </h1>
           <div className="flex flex-col justify-center gap-5 max-sm:items-center sm:flex-row lg:gap-10">
-            <IconAndDetail
-              icon="/icons/author.svg"
-              detail={blok.author}
-              blok={blok}
-            />
-            <IconAndDetail
-              icon="/icons/calendar.svg"
-              detail={formatDate(blok.date)}
-              blok={blok}
-            />
-            <IconAndDetail
-              icon="/icons/categories.svg"
-              detail="Categories"
-              blok={blok}
-            />
+            {blok.author && (
+              <IconAndDetail
+                icon="/icons/author.svg"
+                detail={blok.author}
+                blok={blok}
+              />
+            )}
+            {blok.date && (
+              <IconAndDetail
+                icon="/icons/calendar.svg"
+                detail={formatDate(blok.date)}
+                blok={blok}
+              />
+            )}
+            {blok.category && (
+              <IconAndDetail
+                icon="/icons/categories.svg"
+                detail={blok.category}
+                blok={blok}
+              />
+            )}
           </div>
         </article>
         <article className="flex flex-col gap-3.5 border-b border-blue-main pb-14">
-          <h2
-            className="text-20 xl:text-32 font-light text-blue-main"
+          <p
+            className="text-base font-light leading-6 text-black-1"
             {...storyblokEditable(blok)}
           >
-            {blok.subheading}
-          </h2>
+            {blok.teaser}
+          </p>
           <div
-            className="text-16 font-light text-black-1"
+            className="blog-detail text-base font-light leading-6 text-black-1"
             {...storyblokEditable(blok)}
           >
             {render(blok.description)}

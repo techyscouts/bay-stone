@@ -1,17 +1,21 @@
 import { cn } from '@/lib/utils';
-import { Dispatch, SetStateAction } from 'react';
 
 const Hamburger = ({
   isOpen,
-  setIsOpen,
+  openMenu,
+  closeMenu,
 }: {
   isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  openMenu: () => void;
+  closeMenu: () => void;
 }) => {
   return (
     <div
       className="relative flex size-[35px] cursor-pointer"
-      onClick={() => setIsOpen((prev) => !prev)}
+      onClick={() => {
+        if (isOpen) closeMenu();
+        else openMenu();
+      }}
     >
       <div
         className={`relative m-auto flex h-[15px] w-[30px] rotate-0 items-center

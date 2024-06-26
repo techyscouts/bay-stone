@@ -18,13 +18,13 @@ const LocationDetails = ({ blok }: { blok: any }) => {
       <div className="flex w-full flex-col" {...storyblokEditable(blok)}>
         <h2
           {...storyblokEditable(blok)}
-          className="text-24 xl:text-32 font-light text-blue-main"
+          className="text-2xl font-light text-blue-main xl:text-3xl"
         >
           {blok.subheader}
         </h2>
         <h1
           {...storyblokEditable(blok)}
-          className="text-32 xl:text-48 font-medium text-blue-main"
+          className="text-3xl font-medium text-blue-main xl:text-5xl"
         >
           {blok.header}
         </h1>
@@ -37,7 +37,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
             className="mt-1.5"
           />
           <div
-            className="text-16 w-full max-w-[200px] font-light text-black-1"
+            className="w-full max-w-[200px] text-base font-light leading-6 text-black-1"
             {...storyblokEditable(blok)}
           >
             {render(blok.location)}
@@ -49,7 +49,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
         >
           <Image src="/icons/call-blue.svg" width={15} height={15} alt="call" />
           <p
-            className="text-16 w-full max-w-[200px] font-light text-black-1"
+            className="w-full max-w-[200px] text-base font-light leading-6 text-black-1"
             {...storyblokEditable(blok)}
           >
             {blok.contact}
@@ -64,7 +64,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
             className="flex gap-2"
           >
             <Image src="/icons/email.svg" width={15} height={15} alt="email" />
-            <p className="text-16 w-full font-light text-black-1">
+            <p className="w-full text-base font-light leading-6 text-black-1">
               Customer Service:{' '}
               <span
                 className="font-semibold text-blue-1"
@@ -76,7 +76,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
           </a>
           <a href={`mailto:${blok.sales_email}`} className="flex gap-2">
             <Image src="/icons/email.svg" width={15} height={15} alt="email" />
-            <p className="text-16 w-full font-light text-black-1">
+            <p className="w-full text-base font-light leading-6 text-black-1">
               Sales Service:{' '}
               <span
                 className="font-semibold text-blue-1"
@@ -91,7 +91,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
           <div className="flex gap-2">
             <Image src="/icons/time.svg" width={15} height={15} alt="time" />
             <p
-              className="text-16 w-full font-light text-black-1"
+              className="w-full text-base font-light leading-6 text-black-1"
               {...storyblokEditable(blok)}
             >
               Monday - Friday: {blok.opening_mon_fri}
@@ -100,7 +100,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
           <div className="flex gap-2">
             <Image src="/icons/time.svg" width={15} height={15} alt="time" />
             <p
-              className="text-16 w-full font-light text-black-1"
+              className="w-full text-base font-light leading-6 text-black-1"
               {...storyblokEditable(blok)}
             >
               Saturday: {blok.opening_sat}
@@ -109,7 +109,7 @@ const LocationDetails = ({ blok }: { blok: any }) => {
           <div className="flex gap-2">
             <Image src="/icons/time.svg" width={15} height={15} alt="time" />
             <p
-              className="text-16 w-full font-light text-black-1"
+              className="w-full text-base font-light leading-6 text-black-1"
               {...storyblokEditable(blok)}
             >
               Sunday: {blok.opening_sun}

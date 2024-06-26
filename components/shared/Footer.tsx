@@ -40,11 +40,11 @@ const Footer = ({
         }}
       >
         <header className="flex size-full flex-col items-center py-5 font-medium text-white-1">
-          <h2 className="text-24 xl:text-32">{footerHead}</h2>
+          <h2 className="text-2xl xl:text-3xl">{footerHead}</h2>
           <Link
             href="https://www.instagram.com/baystonedepot/"
             target="_blank"
-            className="text-32 xl:text-48 text-white-1"
+            className="text-3xl text-white-1 xl:text-5xl"
           >
             {footerSubhead}
           </Link>
@@ -57,6 +57,7 @@ const Footer = ({
               alt={image.alt}
               width={355}
               height={355}
+              className="aspect-square object-cover"
             />
           ))}
         </figure>
@@ -66,7 +67,7 @@ const Footer = ({
           bgImage={newsletterBackground}
         />
         <div className="wrapper flex flex-col items-center justify-between py-5 max-xl:gap-5 xl:flex-row">
-          <h1 className="text-20 xl:text-32 font-medium text-white-1">
+          <h1 className="text-xl font-medium text-white-1 xl:text-3xl">
             We Support
           </h1>
           <figure className="flex flex-wrap items-center justify-center gap-5 2xl:gap-10">
@@ -89,7 +90,7 @@ const Footer = ({
         </div>
       </div>
       <footer className="bg-gray-1 py-5">
-        <div className="wrapper text-16 flex flex-col items-center justify-between font-urbane font-semibold text-white-1 max-xl:gap-5 xl:flex-row">
+        <div className="wrapper flex flex-col items-center justify-between font-urbane text-base font-semibold leading-6 text-white-1 max-xl:gap-5 xl:flex-row">
           <menu className="flex gap-10">
             {footerLinks.map((link: navMenu) => (
               <li key={link.links.id}>
@@ -109,9 +110,9 @@ const Footer = ({
                 <Image
                   src={social.icon}
                   alt={social.link}
-                  width={23}
-                  height={23}
-                  className="object-contain max-xl:size-4"
+                  width={24}
+                  height={24}
+                  className="size-6 object-contain max-xl:size-4"
                 />
               </Link>
             ))}

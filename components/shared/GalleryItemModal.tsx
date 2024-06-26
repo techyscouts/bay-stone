@@ -21,11 +21,11 @@ const GalleryItemModal = ({ image }: { image: any }) => {
           width={315}
           height={315}
           priority
-          className="h-[315px] w-full object-cover"
+          className="h-80 w-full object-cover"
           {...storyblokEditable(image)}
         />
         <p
-          className="text-16 xl:text-24 px-2 text-center font-medium text-black-1"
+          className="px-2 text-center text-base font-medium leading-6 text-black-1 xl:text-2xl"
           {...storyblokEditable(image)}
         >
           {image.name}
@@ -40,7 +40,7 @@ const GalleryItemModal = ({ image }: { image: any }) => {
             height={500}
             className="h-[400px] w-full object-cover xl:h-[500px]"
           />
-          <p className="text-16 xl:text-24 px-2 text-center font-medium text-black-1">
+          <p className="px-2 text-center text-base font-medium leading-6 text-black-1 xl:text-2xl">
             {image.name}
           </p>
         </DialogContent>

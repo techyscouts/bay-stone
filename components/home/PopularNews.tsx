@@ -36,7 +36,7 @@ const PopularNews = ({ blok }: { blok: any }) => {
     >
       <div className="flex items-center justify-between">
         <h1
-          className="text-32 xl:text-48 font-medium text-blue-main"
+          className="text-3xl font-medium text-blue-main xl:text-5xl"
           {...storyblokEditable(blok)}
         >
           {blok.headline}

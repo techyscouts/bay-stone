@@ -53,13 +53,13 @@ const Home = ({ blok }: { blok: any }) => {
 
           <article className="flex h-fit w-full flex-col items-center text-center font-urbane text-blue-main">
             <p
-              className="text-24 xl:text-32 font-light"
+              className="text-2xl font-light xl:text-3xl"
               {...storyblokEditable(blok)}
             >
               {blok.testimonial_subHeader}
             </p>
             <h1
-              className="text-32 xl:text-48 pt-3 font-medium text-blue-main"
+              className="pt-3 text-3xl font-medium text-blue-main xl:text-5xl"
               {...storyblokEditable(blok)}
             >
               {blok.testimonial_header}

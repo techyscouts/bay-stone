@@ -53,19 +53,19 @@ const FormDetail = ({ blok }: { blok: any }) => {
       <div className="flex w-full max-w-[970px] flex-col items-center gap-10 rounded-lg bg-white-4 p-10">
         <header className="flex flex-col items-center gap-3">
           <h2
-            className="text-24 xl:text-32 font-light text-blue-main"
+            className="text-2xl font-light text-blue-main xl:text-3xl"
             {...storyblokEditable(blok)}
           >
             {blok.subheader}
           </h2>
           <h1
-            className="text-32 xl:text-48 font-medium text-black-1"
+            className="text-3xl font-medium text-black-1 xl:text-5xl"
             {...storyblokEditable(blok)}
           >
             {blok.header}
           </h1>
         </header>
-        <p className="text-16 text-center font-light text-black-1">
+        <p className="text-center text-base font-light leading-6 text-black-1">
           {blok.description}
         </p>
         <Form {...form}>
@@ -87,7 +87,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-12 text-red-500" />
+                      <FormMessage className="text-xs leading-5 text-red-500" />
                     </div>
                   </FormItem>
                 )}
@@ -105,7 +105,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-12 text-red-500" />
+                      <FormMessage className="text-xs leading-5 text-red-500" />
                     </div>
                   </FormItem>
                 )}
@@ -125,7 +125,7 @@ const FormDetail = ({ blok }: { blok: any }) => {
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className="text-12 text-red-500" />
+                    <FormMessage className="text-xs leading-5 text-red-500" />
                   </div>
                 </FormItem>
               )}

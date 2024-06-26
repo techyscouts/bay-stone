@@ -16,10 +16,10 @@ const ScheduleForm = () => {
   const onSubmit = (data: any) => console.log(data);
   return (
     <section className="flex w-full max-w-[1050px] flex-col items-center gap-10 rounded-lg bg-white-4 p-5 md:p-10">
-      <h1 className="text-32 xl:text-48 text-center font-medium text-blue-main">
+      <h1 className="text-center text-3xl font-medium text-blue-main xl:text-5xl">
         Schedule Your Appointment, Today!
       </h1>
-      <p className="text-16 text-center font-light text-black-1">
+      <p className="text-center text-base font-light leading-6 text-black-1">
         Complete the information below, add comments if needed, and we will call
         you back to confirm your appointment.
       </p>
@@ -38,7 +38,7 @@ const ScheduleForm = () => {
                     <Input
                       placeholder="First Name*"
                       {...field}
-                      className="text-16 placeholder:text-16 w-full font-light text-black-1 placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
+                      className="w-full text-base font-light leading-6 text-black-1 placeholder:text-base placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -54,7 +54,7 @@ const ScheduleForm = () => {
                     <Input
                       placeholder="Last Name*"
                       {...field}
-                      className="text-16 placeholder:text-16 w-full font-light text-black-1 placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
+                      className="w-full text-base font-light leading-6 text-black-1 placeholder:text-base placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -72,7 +72,7 @@ const ScheduleForm = () => {
                     <Input
                       placeholder="Phone Number*"
                       {...field}
-                      className="text-16 placeholder:text-16 w-full font-light text-black-1 placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
+                      className="w-full text-base font-light leading-6 text-black-1 placeholder:text-base placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -88,7 +88,7 @@ const ScheduleForm = () => {
                     <Input
                       placeholder="Email Address*"
                       {...field}
-                      className="text-16 placeholder:text-16 w-full font-light text-black-1 placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
+                      className="w-full text-base font-light leading-6 text-black-1 placeholder:text-base placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0 xl:w-[400px]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -105,7 +105,7 @@ const ScheduleForm = () => {
                   <Input
                     placeholder="How Did You Hear About Us?*"
                     {...field}
-                    className="text-16 placeholder:text-16 w-full font-light text-black-1 placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="w-full text-base font-light leading-6 text-black-1 placeholder:text-base placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0"
                   />
                 </FormControl>
                 <FormMessage />
@@ -121,20 +121,20 @@ const ScheduleForm = () => {
                   <Textarea
                     placeholder="Comment*"
                     {...field}
-                    className="text-16 placeholder:text-16 w-full font-light text-black-1 placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="w-full text-base font-light leading-6 text-black-1 placeholder:text-base placeholder:font-light placeholder:text-black-1 focus-visible:ring-0 focus-visible:ring-offset-0"
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <p className="text-16 text-center font-light text-black-1">
+          <p className="text-center text-base font-light leading-6 text-black-1">
             By Submitting This Form, You Agree To Receive Text Messages*
           </p>
           <div className="flex-center">
             <Button
               type="submit"
-              className="blue-main-bg text-16 max-w-[176px] font-semibold text-white-1"
+              className="blue-main-bg max-w-[176px] text-base font-semibold leading-6 text-white-1"
             >
               Submit
             </Button>

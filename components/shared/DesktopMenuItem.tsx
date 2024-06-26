@@ -5,7 +5,7 @@ const DesktopMenuItem = ({ navItems }: { navItems: navMenu[] }) => {
   return (
     <div
       className={
-        ' text-16 hidden gap-6 whitespace-nowrap font-zillaSlab font-semibold uppercase text-black-1 xl:flex 2xl:gap-11'
+        'hidden gap-6 whitespace-nowrap font-zillaSlab text-base font-semibold uppercase text-black-1 xl:flex 2xl:gap-11'
       }
     >
       {navItems.map((item) => (

@@ -15,7 +15,7 @@ const MobileProductFilter = ({ data }: { data: any }) => {
               height={20}
               alt="filter"
             />
-            <h2 className="text-24 font-medium text-blue-main">Filter by</h2>
+            <h2 className="text-2xl font-medium text-blue-main">Filter by</h2>
           </div>
         </SheetTrigger>
         <SheetContent
