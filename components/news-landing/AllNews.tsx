@@ -25,7 +25,7 @@ const AllNews = ({ blok }: { blok: any }) => {
       {...storyblokEditable(data)}
     >
       <h1
-        className="text-3xl xl:text-5xl font-medium text-blue-main"
+        className="text-3xl font-medium text-blue-main xl:text-5xl"
         {...storyblokEditable(blok)}
       >
         {blok.headline}

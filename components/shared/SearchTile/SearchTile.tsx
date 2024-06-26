@@ -26,7 +26,7 @@ const SearchTile = ({ content, slug }: { content: any; slug: string }) => {
         </div>
         <div className="w-full">
           <Link href={slug}>
-            <Button className="text-base leading-6 max-w-[165px] bg-blue-main px-10 py-2.5 font-semibold text-white-1">
+            <Button className="max-w-[165px] bg-blue-main px-10 py-2.5 text-base font-semibold text-white-1">
               Read more
             </Button>
           </Link>

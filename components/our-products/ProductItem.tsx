@@ -5,7 +5,7 @@ import { getStoryblokApi } from '@storyblok/react';
 import { useEffect, useState } from 'react';
 import { GalleryItemModal } from '../shared';
 import { Button } from '../ui/button';
-import Loading from './Loading';
+import Loading from '../ui/loading';
 
 const ProductItem = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,7 @@ const ProductItem = () => {
       {totalCount > imageCount && (
         <div className="flex-center pt-5 xl:pt-10">
           <Button
-            className="text-base leading-6 px-10 py-2.5 font-semibold text-white-1"
+            className="px-10 py-2.5 text-base font-semibold leading-6 text-white-1"
             onClick={() => setImageCount(imageCount + 9)}
           >
             Load More

@@ -1,13 +1,13 @@
 'use client';
 /* eslint-disable no-template-curly-in-string */
 import { GalleryItemModal } from '@/components/shared';
+import Loading from '@/components/ui/loading';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import Loading from './Loading';
 
 const Page = ({
   params,
@@ -21,14 +21,14 @@ const Page = ({
   const [story, setStory] = useState(null) as any;
   const [imageCount, setImageCount] = useState(9);
   const router = useRouter();
-  const getStory = async () => {
-    const { story } = await fetchStoryBySlug(`collection/${params.filter}`);
-    setStory(story);
-  };
 
   useEffect(() => {
+    const getStory = async () => {
+      const { story } = await fetchStoryBySlug(`collection/${params.filter}`);
+      setStory(story);
+    };
     getStory();
-  }, []);
+  }, [params.filter]);
 
   if (story == null) return <Loading />;
 
@@ -50,7 +50,7 @@ const Page = ({
         <article className={'hero-linear w-full p-10'}>
           <div className="flex w-full items-center justify-between">
             <div className="flex flex-col">
-              <h1 className="text-3xl md:text-5xl w-full max-w-[500px] font-medium text-white-1">
+              <h1 className="w-full max-w-[500px] text-3xl font-medium text-white-1 md:text-5xl">
                 {searchParams.category}
               </h1>
               <p className="text-3xl font-light text-white-1">
@@ -59,7 +59,7 @@ const Page = ({
             </div>
             <Button
               asChild
-              className="blue-main-bg text-base leading-6 font-semibold text-white-1"
+              className="blue-main-bg text-base font-semibold leading-6 text-white-1"
             >
               <Link href={`/collection/${params.filter}`}>View All</Link>
             </Button>
@@ -79,7 +79,7 @@ const Page = ({
       {story.content.image_gallery?.length > imageCount && (
         <div className="flex-center pt-5 xl:pt-10">
           <Button
-            className="text-base leading-6 px-10 py-2.5 font-semibold text-white-1"
+            className="px-10 py-2.5 text-base font-semibold leading-6 text-white-1"
             onClick={() => setImageCount(imageCount + 9)}
           >
             Load More

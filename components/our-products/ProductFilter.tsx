@@ -19,18 +19,18 @@ const ProductFilter = ({ data }: { data: any }) => {
         {category && (
           <div className="flex flex-col bg-gray-light p-5">
             <div className="flex justify-between border-b border-black-1 pb-[14px]">
-              <h2 className="text-base leading-6 font-semibold text-black-1">
+              <h2 className="text-base font-semibold text-black-1">
                 Filter by
               </h2>
               <h2
-                className="text-base leading-6 cursor-pointer font-semibold text-yellow-main"
+                className="cursor-pointer text-base font-semibold text-yellow-main"
                 onClick={() => router.replace('/our-products')}
               >
                 Clear All
               </h2>
             </div>
             <div className="flex justify-between pt-[14px]">
-              <h2 className="text-base leading-6 font-semibold text-black-1">
+              <h2 className="text-base font-semibold leading-6 text-black-1">
                 Filter by: <span className="text-yellow-main">{category}</span>
               </h2>
               <Image

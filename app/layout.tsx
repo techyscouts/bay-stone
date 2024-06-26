@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import type { Metadata } from 'next';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { Zilla_Slab } from 'next/font/google';
 
 import './globals.css';
@@ -9,6 +9,7 @@ import { Footer, Navbar } from '@/components/shared';
 import StoryblokPrivider from '@/providers/StoryblokProvider';
 import { fetchStoryBySlug } from '@/queries/storyblokQueries';
 import { components } from '@/components/components-list';
+import { Loader } from 'lucide-react';
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_SB_ACCESS_TOKEN,
@@ -50,13 +51,15 @@ export default async function RootLayout({
       </head>
       <StoryblokPrivider>
         <body className={`${zillaSlab.variable}`}>
-          <Navbar
-            logo={content.Logo.filename}
-            header={content.header}
-            navItems={content.navbar}
-            buttonName={content.buttonName}
-            mobileButtonNumber={content.mobileButtonNumber}
-          />
+          <Suspense fallback={<Loader className="animate-spin" />}>
+            <Navbar
+              logo={content.Logo.filename}
+              header={content.header}
+              navItems={content.navbar}
+              buttonName={content.buttonName}
+              mobileButtonNumber={content.mobileButtonNumber}
+            />
+          </Suspense>
           {children}
           <Footer
             footerHead={content.footer_head}
